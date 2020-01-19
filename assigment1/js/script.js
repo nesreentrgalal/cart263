@@ -1,6 +1,6 @@
 // https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
 "use strict";
-
+//global variable
 let rotation = 0;
 window.onload = setup;
 
@@ -42,5 +42,5 @@ function resetPixel(pixel){
 function RandomColor(pixel){
     let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
     return randomColor;
-    //random color will be freshly served
+    //random color will be activated
 }
