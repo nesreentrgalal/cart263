@@ -1,6 +1,7 @@
 // https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
 "use strict";
 
+let rotation = 0;
 window.onload = setup;
 
 function setup(){
@@ -18,13 +19,27 @@ function paint(e){
   pixel.style.backgroundColor = RandomColor()
   setTimeout(resetPixel,1000,pixel);
 }
-
-
+//keydown which is the spacebar to rotate
+document.addEventListener('keydown', rotate);
+// rotate()) will be called every time space key is pressed down
+function rotate(e){
+  // so that all pixels are affected
+  let pixels = document.getElementsByClassName('pixel');
+  //if the keycode is 32 which is the spacebar..rotate
+  if (e.keyCode === 32) {
+    rotation = rotation+2;
+  }
+  //an array so that all pixels are affected
+   for (let i = 0; i < pixels.length; i++) {
+  pixels[i].style.transform = `rotate(${rotation}deg)`;
+  }
+}
+// colour goes back to black
 function resetPixel(pixel){
   pixel.style.backgroundColor = "black";
 }
-
-function RandomColor(){
+//random colour by using hexcode
+function RandomColor(pixel){
     let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
     return randomColor;
     //random color will be freshly served
