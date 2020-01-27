@@ -23,7 +23,7 @@ const UPDATE_FREQUENCY = 500;
 
 // A place to store the jQuery selection of all spans
 let $spans;
-//variables for secrets found and total 
+//variables for secrets found and total
 let secretsFound = 0;
 let secretsTotal = 3;
 
