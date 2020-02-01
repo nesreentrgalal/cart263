@@ -17,9 +17,10 @@ $(document).ready(setup);
 
 // Constants to determine how long after dismissing a dialog we should
 // add a new one to the page
-const MIN_DIALOG_DELAY_TIME = 2000;
-const MAX_DIALOG_DELAY_TIME = 20000;
-//variable when the mouse moves
+const MIN_LETTER_DELAY_TIME = 2000;
+const MAX_LETTER_DELAY_TIME = 20000;
+//variable when the mouse moves and to track the mouse movement for the pop up dialog aka letter to happen
+const MAX_MOUSE_MOVES = 20;
 let mouseMoves = 0;
 //audio typewriter key
 let typeWriter = new Audio("assets/sounds/typewriter.wav");
@@ -66,7 +67,7 @@ function mouseMoved() {
   // Increase the number of tracked moves
    mouseMoves = mouseMoves+1;
   // Check if the mouse exceeds 5
-  if (mouseMoves = 5) {
+  if (mouseMoves > MAX_MOUSE_MOVES) {
   // If so, add a dialog
     addLetter();
     // And reset the counter
@@ -110,10 +111,20 @@ function addLetter() {
   $('div').css({
       fontFamily: 'Courier',
       backgroundColor: 'blue',
-      //opacity: '0.3',
+
 });
+
 // div to fade out
- $('div').fadeTo("slow", 0.50);
+ $('div').fadeTo("slow", 0.40);
+  //$('#wrapper').fadeOut("fast", 0.10);
+
+
+
+//  function fadeComplete() {
+  //$('div').css({
+  //  backgroundColor: 'yellow'
+//  });
+//
   // Finally, use .offset() on the .parent() of the dialog in order to give it a random position on the screen.
   // Uses .height() and .width() to get the dimensions of elements, including the window.
   $dialog.parent().offset({
@@ -126,11 +137,8 @@ function addLetter() {
 //
 // Closes the dialog with a sound effect and sets a timer to open a new one
 function closeDialog() {
-  // Play the dismissal sound, ding!
-  typeWriter.currentTime = 0;
-  typeWriter.play();
-  // Choose a random delay time (in ms)
-  let delay = randomInRange(MIN_DIALOG_DELAY_TIME, MAX_DIALOG_DELAY_TIME);
+  // After closing a dialog, a new comes up between the min delay time and max delay time
+  let delay = randomInRange(MIN_LETTER_DELAY_TIME, MAX_LETTER_DELAY_TIME);
   // Set a timeout and add a new dialog after the delay. Dismiss a dialog, and you just get another one back
   setTimeout(addDialog, delay);
 }
