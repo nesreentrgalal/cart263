@@ -5,21 +5,20 @@
 Van Gogh's eternal soul
 Nesreen Galal
 
-This is a template. Fill in the title, author, and this description
-to match your project! Write JavaScript to do amazing things below!
+Credit to pippin's projects
+https://pippinbarr.github.io/cart263-2020/examples/jqueryui/endless-dialogs/
+https://pippinbarr.github.io/cart263-2020/examples/jqueryui/beach-party/
 
+Modified by Me
 *********************************************************************/
 
 $(document).ready(setup);
 
-//dialog box will pop out after 2 seconds
-const INITIAL_DIALOG_DELAY = 2000;
+
 // Constants to determine how long after dismissing a dialog we should
 // add a new one to the page
 const MIN_DIALOG_DELAY_TIME = 2000;
 const MAX_DIALOG_DELAY_TIME = 20000;
-//maximum of how much a mouse moves
-const MAX_MOUSE_MOVES = 5;
 //variable when the mouse moves
 let mouseMoves = 0;
 //audio typewriter key
@@ -65,19 +64,17 @@ $(document).on('mousemove', mouseMoved);
 
 function mouseMoved() {
   // Increase the number of tracked moves
-  mouseMoves++;
-  // Check if they exceed the maximum
-  if (mouseMoves > MAX_MOUSE_MOVES) {
-
-    // If so, add a dialog
-    addDialog();
+   mouseMoves = mouseMoves+1;
+  // Check if the mouse exceeds 5
+  if (mouseMoves = 5) {
+  // If so, add a dialog
+    addLetter();
     // And reset the counter
     mouseMoves = 0;
   }
 }
 
-
-function addDialog() {
+function addLetter() {
   // Play the new dialog sound effect
   typeWriter.currentTime = 0;
   typeWriter.play();
@@ -115,7 +112,7 @@ function addDialog() {
       backgroundColor: 'blue',
       //opacity: '0.3',
 });
-
+// div to fade out
  $('div').fadeTo("slow", 0.50);
   // Finally, use .offset() on the .parent() of the dialog in order to give it a random position on the screen.
   // Uses .height() and .width() to get the dimensions of elements, including the window.
