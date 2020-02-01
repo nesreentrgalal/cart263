@@ -3,8 +3,9 @@
 	padding: 0px;
 	height: 100%;
 	overflow: hidden;
+  opacity: 1;
 }
-#question{
+#letter{
 
 font-family: Courier;
 
