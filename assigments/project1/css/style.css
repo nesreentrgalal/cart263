@@ -11,6 +11,12 @@ font-family: Courier;
 
 
 }
-title{
+#hello{
   font-family: Courier;
+}
+
+.image{
+   display: none;
+   width:30%;
+
 }

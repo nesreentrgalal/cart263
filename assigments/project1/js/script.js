@@ -8,6 +8,8 @@ Nesreen Galal
 Credit to pippin's projects
 https://pippinbarr.github.io/cart263-2020/examples/jqueryui/endless-dialogs/
 https://pippinbarr.github.io/cart263-2020/examples/jqueryui/beach-party/
+dialog to image
+https://stackoverflow.com/questions/4452099/display-images-with-jquery-ui-dialog-widget-like-in-fancybox
 
 Modified by Me
 *********************************************************************/
@@ -20,19 +22,37 @@ $(document).ready(setup);
 const MIN_LETTER_DELAY_TIME = 2000;
 const MAX_LETTER_DELAY_TIME = 20000;
 //variable when the mouse moves and to track the mouse movement for the pop up dialog aka letter to happen
-const MAX_MOUSE_MOVES = 20;
+const MAX_MOUSE_MOVES = 15;
 let mouseMoves = 0;
 //audio typewriter key
 let typeWriter = new Audio("assets/sounds/typewriter.wav");
 let $letters;
 
-
 function setup() {
 
-   $('#letter').dialog();
-  ;
+let $pen = $(".pen");
+// Make it draggable an revert to original position when released.
+$pen.draggable({
+ revert: function(penObj){
+   if( penObj === true) {
+     //success
+     return false;
+   }
+   else {
+     //reverting is happening , hide intro annd show wrapper and divs
+     $('.intro').hide();
+     $('.wrapper').show();
+     $('div').show();
+     return true;
+   }
+ },
+     //Hide intro, play music and reveal game container on play button press
+   //  $('#playText').on('click', function()
 
-  $('#wrapper').tubular({
+     });
+
+
+  $('.wrapper').tubular({
     // The plugin takes various options, but in this case we'll just give it
     // the video ID of the YouTube video we want.
     videoId: 't6NCcZH2Y6w?iv_load_policy=30s'
@@ -83,12 +103,18 @@ function addLetter() {
 
   //make the dialog into a div with the title "To Theo"
   let $dialog = $(`<div></div>`).attr(`title`, `To Theo`);
-   $dialog.attr("src", "assets/images/clown.png");
+  // $dialog.attr("src", "assets/images/clown.png");
   // Choose a random letter from the array
   let letter = letters[Math.floor(randomInRange(0, letters.length))];
 
 // format the letter as a p which is paragraph and to add letters insead of the dialog div using append
   $dialog.append(`<p>${letter}</p>`);
+  //add image to dialog
+  //$dialog.append(`.image`);
+  //when body is clicked show image dialog
+    $("body").click(function() {
+        $('#image').dialog();
+    });
   //show the div on the page and insert it in the body
   $('body').append($dialog);
 
@@ -107,15 +133,17 @@ function addLetter() {
     // contained within the body tag, and can't be dragged out of it.
     containment: 'body'
   });
-
+//css for colour and opacity
   $('div').css({
       fontFamily: 'Courier',
       backgroundColor: 'blue',
 
 });
 
+
 // div to fade out
- $('div').fadeTo("slow", 0.40);
+ $('div').fadeTo("slow", 0.50);
+  $('div').css("assets/images/letter.png")
   //$('#wrapper').fadeOut("fast", 0.10);
 
 
@@ -125,7 +153,7 @@ function addLetter() {
   //  backgroundColor: 'yellow'
 //  });
 //
-  // Finally, use .offset() on the .parent() of the dialog in order to give it a random position on the screen.
+// use .offset() on the .parent() of the dialog in order to give it a random position on the screen.
   // Uses .height() and .width() to get the dimensions of elements, including the window.
   $dialog.parent().offset({
     top: Math.random() * ($(window).height() - $dialog.parent().height()),
