@@ -21,12 +21,12 @@ $(document).ready(setup);
 
 // Constants to determine how long after dismissing a dialog we should
 // add a new one to the page
-const MIN_LETTER_DELAY_TIME = 2000;
+const MIN_LETTER_DELAY_TIME = 10000;
 const MAX_LETTER_DELAY_TIME = 20000;
 //variable when the mouse moves and to track the mouse movement for the pop up dialog aka letter to happen
-const MAX_MOUSE_MOVES = 15;
+const MAX_MOUSE_MOVES = 30;
 let mouseMoves = 0;
-//audio typewriter key
+//audio typewriter key, sounds work once you click on the the web page
 let typeWriter = new Audio("assets/sounds/typewriter.wav");
 let $letters;
 
@@ -42,7 +42,7 @@ function setup() {
       } else {
         //reverting is happening , hide intro annd show wrapper and divs
         $('.intro').hide();
-        $('.wrapper').show();
+        $('.wrapper').hide();
         $('#Dialog').show();
         return true;
       }
@@ -53,11 +53,9 @@ function setup() {
     // the video ID of the YouTube video we want.
     videoId: 't6NCcZH2Y6w?iv_load_policy=30s'
   });
-
-  $(document).on('mousemove', mouseMoved);
-
 }
 
+//letters written by vincent van gogh to theo, his brother
 
 let letters = [
   "This sadness will last forever...",
@@ -78,10 +76,10 @@ let letters = [
 
 ];
 
+//when when you move the mouse, it triggers the mousemoved function
+$(document).on('mousemove', mouseMoved);
 
-
-
-
+// when mouse moves, add a letter
 function mouseMoved() {
   // Increase the number of tracked moves
   mouseMoves = mouseMoves + 1;
@@ -93,7 +91,7 @@ function mouseMoved() {
     mouseMoves = 0;
   }
 }
-
+//
 function addLetter() {
   // Play the new dialog sound effect
   typeWriter.currentTime = 0;
@@ -110,7 +108,7 @@ function addLetter() {
   let letter = letters[Math.floor(randomInRange(0, letters.length))];
 
   // format the letter as a p which is paragraph and to add letters insead of the dialog div using append
-  $('#Dialog').append(`<p>${letter}</p>`);
+  $('#Dialog').html(`<p>${letter}</p>`);
 
   //show the div on the page and insert it in the body
   $('body').append('#Dialog');
