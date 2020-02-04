@@ -94,18 +94,14 @@ function addLetter() {
   // format the letter as a p which is paragraph and to add letters insead of the dialog div using append
   $('#Dialog').html(`<p>${letter}</p>`);
 
-  //show the div on the page and insert it in the body
-  $('body').append('#Dialog');
-
   // transform the dialog into the dialog widget
   $('#Dialog').dialog({
     //button to close the dialog and opacity of wrapper effect, it fades out
     buttons: {
       "Send": function() {
         $(this).dialog(`close`);
-        // opacity to
-        $('body').fadeTo("slow", 0.50);
-        $('body').fadeOut("slow", 10);
+        // opacity to change once you click send
+        $('body').fadeTo("fast", 0.50,fadeIn);
       },
 
     },
@@ -123,6 +119,7 @@ function addLetter() {
   $('#Dialog').parent().offset({
     top: Math.random() * ($(window).height() - $dialog.parent().height()),
     left: Math.random() * ($(window).width() - $dialog.parent().width())
+
   });
 }
 
@@ -133,8 +130,12 @@ function closeDialog() {
   let delay = randomInRange(MIN_LETTER_DELAY_TIME, MAX_LETTER_DELAY_TIME);
   // Set a timeout and add a new dialog after the delay. Dismiss a dialog, and you just get another one back
   setTimeout(addLetter, delay);
-}
 
+}
+//fadeIn function 
+function fadeIn(){
+  $('body').fadeTo("fast", 1);
+}
 // randomInRange()
 //
 // Returns a random number between min and max
