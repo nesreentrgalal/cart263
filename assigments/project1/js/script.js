@@ -34,8 +34,9 @@ let typeWriter = new Audio("assets/sounds/typewriter.wav"); //https://freesound.
 let $letters;
 
 function setup() {
-
-  $('.wrapper').tubular({
+//wrapper youtube video 
+  $(".wrapper").tubular
+({
     // The plugin takes various options, but in this case we'll just give it
     // the video ID of the YouTube video we want.
     videoId: 't6NCcZH2Y6w?iv_load_policy=30s'
