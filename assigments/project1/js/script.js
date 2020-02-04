@@ -32,22 +32,6 @@ let $letters;
 
 function setup() {
 
-  let $pen = $(".pen");
-  // Make it draggable an revert to original position when released.
-  $(".pen").draggable({
-    revert: function(penObj) {
-      if (penObj === true) {
-        //success
-        return false;
-      } else {
-        //reverting is happening , hide intro annd show wrapper and divs
-        $('.intro').hide();
-        $('.wrapper').hide();
-        $('#Dialog').show();
-        return true;
-      }
-    }
-  });
   $('.wrapper').tubular({
     // The plugin takes various options, but in this case we'll just give it
     // the video ID of the YouTube video we want.
@@ -119,12 +103,15 @@ function addLetter() {
     buttons: {
       "Send": function() {
         $(this).dialog(`close`);
-        $(".wrapper").fadeTo("slow", 0.50);
+        // opacity to
+        $('body').fadeTo("slow", 0.50);
+        $('body').fadeOut("slow", 10);
       },
 
     },
     // The 'close' option lets us specify a function to call when the dialog is closed
     close: closeDialog,
+
     // The 'containment' option lets us specify where the dialog can go on the screen. 'body' means it will be
     // contained within the body tag, and can't be dragged out of it.
     containment: 'body'

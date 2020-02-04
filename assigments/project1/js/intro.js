@@ -1,3 +1,8 @@
+
+$(document).ready(setup);
+
+function setup(){
+console.log('hello');
 let $pen = $(".pen");
 // Make it draggable an revert to original position when released.
 $(".pen").draggable({
@@ -5,12 +10,11 @@ $(".pen").draggable({
     if (penObj === true) {
       //success
       return false;
+      //show the second page
     } else {
-      //reverting is happening , hide intro annd show wrapper and divs
-      $('.intro').hide();
-      $('.wrapper').show();
-      $('#Dialog').show();
+      $(location).attr('href', 'https://nesreentrgalal.github.io/cart263/assigments/project1/index.html')
       return true;
     }
   }
 });
+}
