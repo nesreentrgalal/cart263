@@ -5,18 +5,15 @@
 	overflow: hidden;
   opacity: 1;
 }
-#letter{
+#Dialog{
+  font-family:Courier;
+}
 
-font-family: Courier;
-
+#background{
+  background-size:cover;
 
 }
+
 #hello{
   font-family: Courier;
-}
-
-.image{
-   display: none;
-   width:30%;
-
 }

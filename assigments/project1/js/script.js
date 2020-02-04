@@ -10,6 +10,8 @@ https://pippinbarr.github.io/cart263-2020/examples/jqueryui/endless-dialogs/
 https://pippinbarr.github.io/cart263-2020/examples/jqueryui/beach-party/
 dialog to image
 https://stackoverflow.com/questions/4452099/display-images-with-jquery-ui-dialog-widget-like-in-fancybox
+revert
+http://jsfiddle.net/yTMwu/35/
 
 Modified by Me
 *********************************************************************/
@@ -30,39 +32,37 @@ let $letters;
 
 function setup() {
 
-let $pen = $(".pen");
-// Make it draggable an revert to original position when released.
-$pen.draggable({
- revert: function(penObj){
-   if( penObj === true) {
-     //success
-     return false;
-   }
-   else {
-     //reverting is happening , hide intro annd show wrapper and divs
-     $('.intro').hide();
-     $('.wrapper').show();
-     $('div').show();
-     return true;
-   }
- },
-     //Hide intro, play music and reveal game container on play button press
-   //  $('#playText').on('click', function()
-
-     });
+  let $pen = $(".pen");
+  // Make it draggable an revert to original position when released.
+  $(".pen").draggable({
+    revert: function(penObj) {
+      if (penObj === true) {
+        //success
+        return false;
+      }
+      else {
+        //reverting is happening , hide intro annd show wrapper and divs
+        $('.intro').hide();
+        $('.wrapper').show();
+        $('#Dialog').show();
+        return true;
+      }
+    }
+  });
 
 
   $('.wrapper').tubular({
     // The plugin takes various options, but in this case we'll just give it
     // the video ID of the YouTube video we want.
     videoId: 't6NCcZH2Y6w?iv_load_policy=30s'
-});
+  });
 
-$(document).on('mousemove', mouseMoved);
+  $(document).on('mousemove', mouseMoved);
+
 }
 
 
-  let letters = [
+let letters = [
   "This sadness will last forever...",
   "I dream my painting and I paint my dream.",
   "There is nothing more truly artistic than to love people.",
@@ -81,14 +81,16 @@ $(document).on('mousemove', mouseMoved);
 
 ];
 
-//$letters = $('#letter');
+
+
+
 
 function mouseMoved() {
   // Increase the number of tracked moves
-   mouseMoves = mouseMoves+1;
+  mouseMoves = mouseMoves + 1;
   // Check if the mouse exceeds 5
   if (mouseMoves > MAX_MOUSE_MOVES) {
-  // If so, add a dialog
+    // If so, add a dialog
     addLetter();
     // And reset the counter
     mouseMoves = 0;
@@ -102,28 +104,27 @@ function addLetter() {
 
 
   //make the dialog into a div with the title "To Theo"
-  let $dialog = $(`<div></div>`).attr(`title`, `To Theo`);
-  // $dialog.attr("src", "assets/images/clown.png");
+  let $dialog = $('#Dialog');
+ //background image of dialog
+  $('#Dialog').parent().css({
+    background: 'url(assets/images/letter.png)'
+  })
   // Choose a random letter from the array
   let letter = letters[Math.floor(randomInRange(0, letters.length))];
 
-// format the letter as a p which is paragraph and to add letters insead of the dialog div using append
-  $dialog.append(`<p>${letter}</p>`);
-  //add image to dialog
-  //$dialog.append(`.image`);
-  //when body is clicked show image dialog
-    $("body").click(function() {
-        $('#image').dialog();
-    });
+  // format the letter as a p which is paragraph and to add letters insead of the dialog div using append
+  $('#Dialog').append(`<p>${letter}</p>`);
+
   //show the div on the page and insert it in the body
-  $('body').append($dialog);
+  $('body').append('#Dialog');
 
   // transform the dialog into the dialog widget
-  $dialog.dialog({
-    //button to close the dialog
+  $('#Dialog').dialog({
+    //button to close the dialog and opacity of wrapper effect, it fades out
     buttons: {
       "Send": function() {
         $(this).dialog(`close`);
+        $(".wrapper").fadeTo("slow", 0.50);
       },
 
     },
@@ -133,42 +134,23 @@ function addLetter() {
     // contained within the body tag, and can't be dragged out of it.
     containment: 'body'
   });
-//css for colour and opacity
-  $('div').css({
-      fontFamily: 'Courier',
-      backgroundColor: 'blue',
-
-});
 
 
-// div to fade out
- $('div').fadeTo("slow", 0.50);
-  $('div').css("assets/images/letter.png")
-  //$('#wrapper').fadeOut("fast", 0.10);
-
-
-
-//  function fadeComplete() {
-  //$('div').css({
-  //  backgroundColor: 'yellow'
-//  });
-//
-// use .offset() on the .parent() of the dialog in order to give it a random position on the screen.
+  // use .offset() on the .parent() of the dialog in order to give it a random position on the screen.
   // Uses .height() and .width() to get the dimensions of elements, including the window.
-  $dialog.parent().offset({
+  $('#Dialog').parent().offset({
     top: Math.random() * ($(window).height() - $dialog.parent().height()),
     left: Math.random() * ($(window).width() - $dialog.parent().width())
   });
 }
 
 // closeDialog()
-//
-// Closes the dialog with a sound effect and sets a timer to open a new one
+// Closes the dialog and sets a timer to open a new one
 function closeDialog() {
   // After closing a dialog, a new comes up between the min delay time and max delay time
   let delay = randomInRange(MIN_LETTER_DELAY_TIME, MAX_LETTER_DELAY_TIME);
   // Set a timeout and add a new dialog after the delay. Dismiss a dialog, and you just get another one back
-  setTimeout(addDialog, delay);
+  setTimeout(addLetter, delay);
 }
 
 // randomInRange()
