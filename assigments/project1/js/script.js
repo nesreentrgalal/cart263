@@ -3,9 +3,14 @@
 /********************************************************************
 
 Van Gogh's eternal soul
+This starts off with a start page, with some instructions once you drag then pen, it leads you to the main page, with
+an animated van gogh background and his letters to theo and paintings in loop with Beethoven's Moonlight Sonata playing.
+To start seeing the dialogs you would have to move your mouse and to hear the typewriter sound!
+After finishing reading each letter, click on send for some hover action.
+
 Nesreen Galal
 
-Credit to pippin's projects
+I was able to do this project thanks the help of these urls.
 https://pippinbarr.github.io/cart263-2020/examples/jqueryui/endless-dialogs/
 https://pippinbarr.github.io/cart263-2020/examples/jqueryui/beach-party/
 dialog to image
@@ -13,11 +18,9 @@ https://stackoverflow.com/questions/4452099/display-images-with-jquery-ui-dialog
 revert
 http://jsfiddle.net/yTMwu/35/
 
-Modified by Me
 *********************************************************************/
 
 $(document).ready(setup);
-
 
 // Constants to determine how long after dismissing a dialog we should
 // add a new one to the page
@@ -27,7 +30,7 @@ const MAX_LETTER_DELAY_TIME = 20000;
 const MAX_MOUSE_MOVES = 30;
 let mouseMoves = 0;
 //audio typewriter key, sounds work once you click on the the web page
-let typeWriter = new Audio("assets/sounds/typewriter.wav");
+let typeWriter = new Audio("assets/sounds/typewriter.wav"); //https://freesound.org/people/yottasounds/sounds/380137/
 let $letters;
 
 function setup() {
@@ -86,7 +89,7 @@ function addLetter() {
   let $dialog = $('#Dialog');
   //background image of dialog
   $('#Dialog').parent().css({
-    background: 'url(assets/images/letter.png)'
+    background: 'url(assets/images/letter.png)' //https://i.pinimg.com/originals/4c/65/f9/4c65f913798dcd566fb929d0973a37e6.jpg
   })
   // Choose a random letter from the array
   let letter = letters[Math.floor(randomInRange(0, letters.length))];
