@@ -39,8 +39,7 @@ function setup() {
       if (penObj === true) {
         //success
         return false;
-      }
-      else {
+      } else {
         //reverting is happening , hide intro annd show wrapper and divs
         $('.intro').hide();
         $('.wrapper').show();
@@ -49,8 +48,6 @@ function setup() {
       }
     }
   });
-
-
   $('.wrapper').tubular({
     // The plugin takes various options, but in this case we'll just give it
     // the video ID of the YouTube video we want.
@@ -105,7 +102,7 @@ function addLetter() {
 
   //make the dialog into a div with the title "To Theo"
   let $dialog = $('#Dialog');
- //background image of dialog
+  //background image of dialog
   $('#Dialog').parent().css({
     background: 'url(assets/images/letter.png)'
   })
