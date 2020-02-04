@@ -101,7 +101,7 @@ function addLetter() {
       "Send": function() {
         $(this).dialog(`close`);
         // opacity to change once you click send
-        $('body').fadeTo("fast", 0.50,fadeIn);
+        $('body').fadeTo("fast", 0.30,fadeIn);
       },
 
     },
@@ -132,7 +132,7 @@ function closeDialog() {
   setTimeout(addLetter, delay);
 
 }
-//fadeIn function 
+//fadeIn function
 function fadeIn(){
   $('body').fadeTo("fast", 1);
 }
