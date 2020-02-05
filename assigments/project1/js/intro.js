@@ -1,7 +1,7 @@
 $(document).ready(setup);
 
 function setup() {
-  console.log("hello");
+  //pen image class
   let $pen = $(".pen");
   // Make it draggable an revert to original position when released.
   $(".pen").draggable({

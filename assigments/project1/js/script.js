@@ -26,7 +26,7 @@ $(document).ready(setup);
 // add a new one to the page
 const MIN_LETTER_DELAY_TIME = 10000;
 const MAX_LETTER_DELAY_TIME = 20000;
-//variable when the mouse moves and to track the mouse movement for the pop up dialog aka letter to happen
+//variable when the mouse moves and to track the mouse movement for the pop up dialog/letter to initiate
 const MAX_MOUSE_MOVES = 30;
 let mouseMoves = 0;
 //audio typewriter key, sounds work once you click on the the web page
@@ -34,7 +34,7 @@ let typeWriter = new Audio("assets/sounds/typewriter.wav"); //https://freesound.
 let $letters;
 
 function setup() {
-//wrapper youtube video 
+//wrapper youtube video
   $(".wrapper").tubular
 ({
     // The plugin takes various options, but in this case we'll just give it
@@ -44,7 +44,6 @@ function setup() {
 }
 
 //letters written by vincent van gogh to theo, his brother
-
 let letters = [
   "This sadness will last forever...",
   "I dream my painting and I paint my dream.",
@@ -79,14 +78,14 @@ function mouseMoved() {
     mouseMoves = 0;
   }
 }
-//
+//Add letter
 function addLetter() {
   // Play the new dialog sound effect
   typeWriter.currentTime = 0;
   typeWriter.play();
 
 
-  //make the dialog into a div with the title "To Theo"
+  //the dialog is the dialog id
   let $dialog = $('#Dialog');
   //background image of dialog
   $('#Dialog').parent().css({
@@ -95,16 +94,15 @@ function addLetter() {
   // Choose a random letter from the array
   let letter = letters[Math.floor(randomInRange(0, letters.length))];
 
-  // format the letter as a p which is paragraph and to add letters insead of the dialog div using append
+  // format the letter as a p which is paragraph and to add letters to the dialog id
   $('#Dialog').html(`<p>${letter}</p>`);
-
   // transform the dialog into the dialog widget
   $('#Dialog').dialog({
     //button to close the dialog and opacity of wrapper effect, it fades out
     buttons: {
       "Send": function() {
         $(this).dialog(`close`);
-        // opacity to change once you click send
+        // opacity to change once you click send and call FadeIn to return back the opacity to normal
         $('body').fadeTo("fast", 0.30,fadeIn);
       },
 
@@ -134,14 +132,12 @@ function closeDialog() {
   let delay = randomInRange(MIN_LETTER_DELAY_TIME, MAX_LETTER_DELAY_TIME);
   // Set a timeout and add a new dialog after the delay. Dismiss a dialog, and you just get another one back
   setTimeout(addLetter, delay);
-
 }
-//fadeIn function
+//fadeIn function to return to normal opacity
 function fadeIn(){
   $('body').fadeTo("fast", 1);
 }
 // randomInRange()
-//
 // Returns a random number between min and max
 function randomInRange(min, max) {
   return min + (Math.random() * (max - min));
