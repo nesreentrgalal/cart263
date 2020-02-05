@@ -80,13 +80,13 @@ function mouseMoved() {
 }
 //Add letter
 function addLetter() {
-  // Play the new dialog sound effect
+  // Play thet typewriter sound effect
   typeWriter.currentTime = 0;
   typeWriter.play();
 
   //the dialog is the dialog id
   let $dialog = $("#Dialog");
-  //background image of dialog
+  //background image of dialog, the letter image
   $("#Dialog")
     .parent()
     .css({
@@ -128,7 +128,7 @@ function addLetter() {
 // closeDialog()
 // Closes the dialog and sets a timer to open a new one
 function closeDialog() {
-  //sound effect for send 
+  //sound effect for send
   sendSound.currentTime = 0;
   sendSound.play();
   // After closing a dialog, a new comes up between the min delay time and max delay time
