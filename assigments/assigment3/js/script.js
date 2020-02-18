@@ -149,14 +149,29 @@ let animals = [
 
 let answers = [];
 const NUM_OPTIONS = 5;
-
 let correctAnimal;
+let score;
 
+// annyang commands
+let giveUp = {
+  'I give up': giveUp
+};
+
+let sayItAgain = {
+  'Say it again': repeatName
+};
 
 
 
 function setup() {
   newRound();
+//activate annyang
+   if (annyang) {
+    annyang.addCommands(giveUp);
+    annyang.addCommands(repeatName);
+    annyang.start();
+   }
+
 }
 
 function addButton(label) {
