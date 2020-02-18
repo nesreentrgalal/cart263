@@ -150,28 +150,24 @@ let animals = [
 let answers = [];
 const NUM_OPTIONS = 5;
 let correctAnimal;
-let score;
+let score = 0;
 
-// annyang commands
-let giveUp = {
-  'I give up': giveUp
-};
-
-let sayItAgain = {
-  'Say it again': repeatName
-};
-
-
+// https://www.talater.com/annyang/ with the help of this
+var command = {
+     "*I give up": handleGiveUp,
+     "*Repeat again": repeatAgain,
+     "I think it's *animal": handleGuess
+   };
 
 function setup() {
-  newRound();
-//activate annyang
+
+  //activate annyang
    if (annyang) {
-    annyang.addCommands(giveUp);
-    annyang.addCommands(repeatName);
+    annyang.addCommands(command);
     annyang.start();
    }
-
+    newRound();
+    showScore();
 }
 
 function addButton(label) {
@@ -197,10 +193,14 @@ function handleGuess(){
   if ($(this).text() === correctAnimal) {
     $('.guess').remove();
     setTimeout(newRound,1000);
+    score = score+1;
+
    }
   else {
    $(this).effect('shake');
    sayBackwards(correctAnimal);
+   score = 0;
+   showScore();
  }
 }
 function sayBackwards(text){
@@ -210,4 +210,15 @@ function sayBackwards(text){
     rate: Math.random()
   };
   responsiveVoice.speak(backwardsText,'UK English Male',options);
+}
+
+
+
+//says the text again when the user asks
+function repeatAgain() {
+  responsiveVoice.speak(backwardsText, "UK English Male", options);
+}
+//score is h1 from the body text
+function showScore() {
+  $("h1").text(`Score: ${score}`);
 }
