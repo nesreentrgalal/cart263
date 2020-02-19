@@ -159,6 +159,7 @@ function setup() {
   //activate annyang
   if (annyang) {
     // https://www.talater.com/annyang/ with the help of this
+    //the voice commands 
     let command = {
       "*I give up": handleGiveUp,
       "*Repeat again": repeatAgain,
@@ -169,7 +170,7 @@ function setup() {
 
     // annyang listens to command (refering the commanding variable above)
     annyang.addCommands(command);
-
+    //round and score to display so I put it in the setup
     newRound();
     showScore();
     //annyang start!
@@ -194,17 +195,18 @@ function newRound() {
     addButton(answer);
     answers.push(answer);
   }
+  //random
   correctAnimal = answers[Math.floor(Math.random() * answers.length)]; //choose the correct answer
   sayBackwards(correctAnimal);
 }
-//if guessed correctly
+//if guessed correctly, add score ,  if not shake and say the correct animal backwards again
 function handleGuess() {
   if ($(this).text() === correctAnimal) {
     $('.guess').remove();
     setTimeout(newRound, 1000);
     score++;
     showScore();
-
+    //return to score 0, and shake  if not guessed correctly
   } else {
     $(this).effect('shake');
     sayBackwards(correctAnimal);
