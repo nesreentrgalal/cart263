@@ -152,24 +152,30 @@ const NUM_OPTIONS = 5;
 let correctAnimal;
 let score = 0;
 
-// https://www.talater.com/annyang/ with the help of this
-var command = {
-     "*I give up": handleGiveUp,
-     "*Repeat again": repeatAgain,
-     "I think it's *animal": handleGuess
-   };
-
 function setup() {
 
   //activate annyang
    if (annyang) {
-    annyang.addCommands(command);
-    annyang.start();
-   }
+     // https://www.talater.com/annyang/ with the help of this
+     let command = {
+          "*I give up": handleGiveUp,
+          "*Repeat again": repeatAgain,
+          "I think it's *animal": handleGuessing,
+        };
+
+
+
+// annyang listens to command (refering the commanding variable above)
+ annyang.addCommands(command);
+
     newRound();
     showScore();
+    //annyang start!
+  annyang.start();
+}
 }
 
+//buttons
 function addButton(label) {
   let $button = $("<div class='guess'></div>");
   $button.text(label);
@@ -178,6 +184,7 @@ function addButton(label) {
   $('body').append($button);
 }
 
+// a new round with random animals
 function newRound(){
   answers=[];//reset answers
   for (let i = 0; i < NUM_OPTIONS; i++) {
@@ -188,8 +195,8 @@ function newRound(){
   correctAnimal = answers[Math.floor(Math.random() * answers.length)]; //choose the correct answer
   sayBackwards(correctAnimal);
 }
-
-function handleGuess(phrase){
+//if guessed correctly
+function handleGuess(){
   if ($(this).text() === correctAnimal) {
     $('.guess').remove();
     setTimeout(newRound,1000);
@@ -204,6 +211,7 @@ function handleGuess(phrase){
    showScore();
  }
 }
+// responsive voice sayig the text backwards
 function sayBackwards(text){
   let backwardsText = text.split('').reverse().join('');
   let options = {
@@ -212,14 +220,45 @@ function sayBackwards(text){
   };
   responsiveVoice.speak(backwardsText,'UK English Male',options);
 }
+//user saying giving up, create a shake effect and return score to zero
+function handleGiveUp() {
+  $("div").each(function(animal) {
+    if ($(this).text() === correctAnimal) {
+      //highlight effect
+      //https://www.tutorialspoint.com/jquery/effect-highlight.htm
+      $(this).effect("highlight", {color:"#669966"}, 3000);
+      score = 0;
+      //displaying the score
+      showScore();
+      newRound();
+    }
+  });
+}
 
+// say phrase, if guessed correctly add score and new round if not score goes back to zero
+function handleGuessing(phrase){
+  if (phrase === correctAnimal) {
+      $(".guess").remove();
+      setTimeout(newRound, 1000);
+      score++;
+      //showing the score
+      showScore();
+      newRound();
+    } else {
+      // If they said the wrong thing, say the word again, and shift it to zero
+      responsiveVoice.speak(backwardsText, "UK English Male", options);
+      score = 0;
+      //displaying the score
+      showScore();
+    }
 
+}
 
 //says the text again when the user asks
 function repeatAgain() {
-  responsiveVoice.speak(backwardsText, "UK English Male", options);
+  sayBackwards(correctAnimal);
 }
-//score is h1 from the body text
+//score is h2 from the body text and score varaible
 function showScore() {
   $("h2").text(`Score: ${score}`);
 }
