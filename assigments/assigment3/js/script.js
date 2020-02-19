@@ -189,11 +189,12 @@ function newRound(){
   sayBackwards(correctAnimal);
 }
 
-function handleGuess(){
+function handleGuess(phrase){
   if ($(this).text() === correctAnimal) {
     $('.guess').remove();
     setTimeout(newRound,1000);
-    score = score+1;
+    score++;
+    showScore();
 
    }
   else {
@@ -220,5 +221,5 @@ function repeatAgain() {
 }
 //score is h1 from the body text
 function showScore() {
-  $("h1").text(`Score: ${score}`);
+  $("h2").text(`Score: ${score}`);
 }
