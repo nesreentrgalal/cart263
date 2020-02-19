@@ -2,7 +2,8 @@
 
 /********************************************************************
 
-Assigment 3
+
+Assignment 3: Slamina Special
 Nesreen Galal
 
 
@@ -10,6 +11,7 @@ Nesreen Galal
 
 $(document).ready(setup);
 
+// The Animals array
 let animals = [
   "aardvark",
   "alligator",
@@ -247,7 +249,7 @@ function handleGuessing(phrase) {
     newRound();
   } else {
     // If they said the wrong thing, say the word again, and shift it to zero
-    responsiveVoice.speak(backwardsText, "UK English Male", options);
+    sayBackwards(correctAnimal);
     score = 0;
     //displaying the score
     showScore();
