@@ -11,6 +11,7 @@ Project inspired by project 1 and itisasifyouweremakinglove by Pippin
 *********************************************************************/
 const DELAY_TIME = 1500;
 const FADE_TIME = 1500;
+
 createTextInputDialog();
 
 $(document).ready(setup);
@@ -40,13 +41,12 @@ let contentText = [
 
 
 
-
 //create dialog
 function createTextInputDialog() {
   $textGenerated = $('<div id="text-input"></div>');
-  $textGenerated.append('<p id="text-input-request"></p>');
-  $textGenerated.append('<input id="text-input-field"></input>');
-  let content = contentText[Math.floor(randomInRange(0, letters.length))];
+  //$textGenerated.append('<p id="text-input-request"></p>');
+  //$textGenerated.append('<input id="text-input-field"></input>');
+  let content = contentText[Math.floor(randomInRange(0, contentText.length))];
   $textGenerated.dialog({
     title: 'generated content',
     width: '310px',
@@ -59,7 +59,8 @@ function createTextInputDialog() {
     buttons: {
       Submit: function () {
         setTimeout(function () {
-          $textInput.dialog('close');
+          $textGenerated.dialog('close');
         },300);
       }
   });
+}
