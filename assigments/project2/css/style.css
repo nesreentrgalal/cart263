@@ -2,6 +2,34 @@
 
 body{
   background-size: cover;
-  
 
+
+}
+
+.textBox {
+  width: 100%;
+  border-top: solid 2px black;
+  border-left: solid 2px black;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  margin-bottom: 1em;
+  overflow-y: hidden;
+}
+
+.text {
+  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-size: 1em;
+  padding: 2px;
+}
+
+
+#messagesBox {
+  width: 100%;
+  border-top: solid 2px black;
+  border-left: solid 2px black;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  margin-bottom: 1em;
+  height: 3em;
+  overflow-y: hidden;
 }
