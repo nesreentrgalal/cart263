@@ -13,6 +13,7 @@ const DELAY_TIME = 1500;
 const FADE_TIME = 1500;
 
 createTextInputDialog();
+let dialogSound = new Audio("assets/sounds/WINDOWS_ERROR SOUND.mp3"); https://www.youtube.com/watch?v=iqztd7uMvVI
 
 $(document).ready(setup);
 
@@ -43,6 +44,9 @@ let contentText = [
 
 //create dialog
 function createTextInputDialog() {
+ dialogSound.currentTime = 0;
+ dialogSound.play();
+
   $textGenerated = $('<div id="text-input"></div>');
   //$textGenerated.append('<p id="text-input-request"></p>');
   //$textGenerated.append('<input id="text-input-field"></input>');
