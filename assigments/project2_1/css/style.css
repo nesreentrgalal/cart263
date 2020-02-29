@@ -6,7 +6,17 @@
   opacity: 1;
 }
 #Dialog{
-  font-family:Courier;
+	width: 100%;
+ border-top: solid 2px black;
+ border-left: solid 2px black;
+ border-right: 2px solid white;
+ border-bottom: 2px solid white;
+ margin-bottom: 1em;
+ overflow-y: hidden;
+ font-family: "MS Sans Serif", Arial, sans-serif;
+font-size: 1em;
+padding: 2px;
+
 }
 
 #background{
