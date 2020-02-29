@@ -1,0 +1,35 @@
+#wrapper {
+	margin: 0 auto;
+	padding: 0px;
+	height: 100%;
+	overflow: hidden;
+  opacity: 1;
+}
+#Dialog{
+  font-family:Courier;
+}
+
+#background{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
+	background-color: yellow;
+}
+
+#hello{
+  font-family: Courier;
+}
+
+.intro{
+  font-family:cursive;
+}
+
+#instructions{
+	background-position: left;
+}
+
+
+body{
+  background-size: cover;
+}

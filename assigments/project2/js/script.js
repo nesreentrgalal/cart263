@@ -66,5 +66,5 @@ function createTextInputDialog() {
           $textGenerated.dialog('close');
         },300);
       }
-  });
+  }});
 }
