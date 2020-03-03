@@ -7,7 +7,7 @@ I was inspired to do this idea when I read this in the article
 when the author talked about "pressing contemporary issues such as racial and gender bias in big data and machine intelligence-driven systems"
 The T-shirts he mentioned that were sold on Amazon using an unchecked list of verbs and pronouns with an online image generator,
 like “Keep Calm and Rape A Lot” tshirts and “Keep Calm and Hit Her”.
-I decided to use a gibberish random text online generator, and he was right.
+I decided to use a gibberish random text online generator https://randomtextgenerator.com/, and he was right.
 Most of words targeted towards women is marriage, and "his joy of sex ", "mistress", "fail lady", "Ladies bed wisdom theirs men months set.""
 "Age attended betrayed her man", they all show sexism towards women and negative connotation. It shows the negrative gender bias that the
 author was explaining.
@@ -22,18 +22,21 @@ $(document).ready(setup);
 
 // Constants to determine how long after dismissing a dialog we should
 // add a new one to the page
-const MIN_LETTER_DELAY_TIME = 10000;
-const MAX_LETTER_DELAY_TIME = 20000;
+const MIN_LETTER_DELAY_TIME = 500;
+const MAX_LETTER_DELAY_TIME = 1500;
 //variable when the mouse moves and to track the mouse movement for the pop up dialog/letter to initiate
 const MAX_MOUSE_MOVES = 100;
 let mouseMoves = 0;
-//audio typewriter key, sounds work once you click on the the web page
+//windows 95 error sound, sounds work once you click on the the web page
 let dialogSound = new Audio("assets/sounds/WINDOWS_ERROR SOUND.mp3"); //https://www.youtube.com/watch?v=iqztd7uMvVI
 
 let $texts;
 
 function setup() {
-
+responsiveVoice.speak("#unbais, #safe #peace #ungenerated #unbais #truth #real", "UK English Male", {
+  rate: 1,
+  volume: 1
+});
 }
 
 //letters written by vincent van gogh to theo, his brother
@@ -54,6 +57,9 @@ let texts = [
   "She wholly fat who window extent either formal.",
   "That know ask case sex ham dear her spot."
 ];
+
+
+
 
 //when when you move the mouse, it triggers the mousemoved function
 $(document).on("mousemove", mouseMoved);

@@ -1,12 +1,6 @@
-#wrapper {
-	margin: 0 auto;
-	padding: 0px;
-	height: 100%;
-	overflow: hidden;
-  opacity: 1;
-}
+
 #Dialog{
-	width: 100%;
+width:100%;
  border-top: solid 2px black;
  border-left: solid 2px black;
  border-right: 2px solid white;
@@ -16,6 +10,25 @@
  font-family: "MS Sans Serif", Arial, sans-serif;
 font-size: 1em;
 padding: 2px;
+
+
+border: solid;
+border-width: 2px;
+border-bottom-color: #424242;
+border-right-color: #424242;
+border-left-color: #fff;
+border-top-color: #fff;
+background: silver;
+color:#212529;
+width:100%;
+height: auto;
+vertical-align: middle;
+position: absolute;
+top: 30%;
+left: 30%;
+margin-right: -70%;
+margin:0;
+
 
 }
 
@@ -31,13 +44,7 @@ padding: 2px;
   font-family: Courier;
 }
 
-.intro{
-  font-family:cursive;
-}
 
-#instructions{
-	background-position: left;
-}
 
 
 body{
