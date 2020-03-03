@@ -95,16 +95,8 @@ function addLetter() {
     width: '310px',
     height: 'auto',
     modal: true,
-    //button to close the dialog and opacity of wrapper effect, it fades out
-    buttons: {
-      Close: function() {
-        $(this).dialog(`close`);
-        // opacity to change once you click send and call FadeIn to return back the opacity to normal
-      //  $("body").fadeTo("fast", 0.3, fadeIn);
-      }
-    },
     // The 'close' option lets us specify a function to call when the dialog is closed
-    close: closeDialog,
+      close: closeDialog,
 
     // The 'containment' option lets us specify where the dialog can go on the screen. 'body' means it will be
     // contained within the body tag, and can't be dragged out of it.
