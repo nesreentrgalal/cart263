@@ -34,10 +34,7 @@ let $texts;
 
 function setup() {
   //responsive voices of hastags being ironic and contradicting the text
-  responsiveVoice.speak("#unbais, #safe #peace #ungenerated #unbais #truth #real", "UK English Male", {
-    rate: 1,
-    volume: 1
-  });
+  responsiveVoice.speak("#unbais, #safe #peace #ungenerated #unbais #truth #real", "UK English Female");
 }
 
 //gender biased text generator
@@ -75,6 +72,7 @@ function mouseMoved() {
     addLetter();
     // And reset the counter
     mouseMoves = 0;
+    $("#Dialog").show();
   }
 }
 //Add letter
