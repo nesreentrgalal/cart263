@@ -14,7 +14,7 @@ author was explaining.
 
 Project inspired by project 1 and itisasifyouweremakinglove by Pippin
 I got help from these websites to achieve this project:
-windows 95 settings code // desktop navigation thanks to  https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE
+windows 95 settings code // desktop navigation and time thanks to  https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE
 login form windows 95 thanks to  https://www.cssscript.com/windows-95-theme-bootstrap/
 *********************************************************************/
 
@@ -101,7 +101,7 @@ function addLetter() {
       Close: function() {
         $(this).dialog(`close`);
         // opacity to change once you click send and call FadeIn to return back the opacity to normal
-        $("body").fadeTo("fast", 0.3, fadeIn);
+      //  $("body").fadeTo("fast", 0.3, fadeIn);
       }
     },
     // The 'close' option lets us specify a function to call when the dialog is closed
@@ -134,9 +134,9 @@ function closeDialog() {
   setTimeout(addLetter, delay);
 }
 //fadeIn function to return to normal opacity
-function fadeIn() {
-  $("body").fadeTo("fast", 1);
-}
+//function fadeIn() {
+  //$("body").fadeTo("fast", 1);
+//}
 // randomInRange()
 // Returns a random number between min and max
 function randomInRange(min, max) {
@@ -144,28 +144,19 @@ function randomInRange(min, max) {
 }
 
 $(document).ready(function() {
+  //activate the start time function for the time to show in the bar thanks to https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE
   startTime();
-  $('#startMenu').hide();
+//start navbar
   $('#start').click(function() {
     $('#startMenu').toggle();
     $(this).toggleClass('startClick');
   });
-
-  $('#desktop').click(function() {
-    $('#startMenu').hide();
-    $('#start').removeClass('startClick').addClass('startRest');
-  })
-
-
-  $('.desktopIcon').dblclick(function() {
-    alert($(this).text());
-  });
-
 });
 
-
+//code for the time to work in the navbar thanks to https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE
 function startTime() {
   var today = new Date();
+  // to get hrs, mintues and seconds depending on the day and date
   var h = today.getHours();
   var m = today.getMinutes();
   var s = today.getSeconds();
@@ -178,7 +169,7 @@ function startTime() {
     startTime()
   }, 500);
 }
-
+// add a zero in front of numbers<10
 function checkTime(i) {
   if (i < 10) {
     i = "0" + i;

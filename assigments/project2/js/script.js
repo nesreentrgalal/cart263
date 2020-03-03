@@ -19,7 +19,10 @@ $(document).ready(setup);
 
 
 function setup() {
-
+  responsiveVoice.speak("#unbais, #safe #peace #ungenerated #unbais #truth #real", "UK English Male", {
+      rate: 1,
+      volume: 1
+    });
 }
 
 let contentText = [
