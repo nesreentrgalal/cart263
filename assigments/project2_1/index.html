@@ -12,6 +12,8 @@
 
     <!-- CSS stylesheet(s) -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+      <!-- windows 95 css link -->
+   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
 
     <!-- My script(s) -->
     <script
@@ -29,6 +31,7 @@
       integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
       crossorigin="anonymous"
     ></script>
+
     <!-- main script -->
     <script src="js/script.js"></script>
   </head>
@@ -40,7 +43,7 @@
        }
      </style>
     <!--div wrapper -->
-  
+
       <!-- dialog div with title -->
       <div id="Dialog">
         <!--instruction image that disapears once there is mouse interaction! -->
@@ -49,5 +52,30 @@
         </div>
       </div>
     </div>
+  </div>
+    <!-- windows 95 settings code // desktop navigation code thanks to https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE-->
+  <div id="taskbar">
+      <div id="start" class="startRest">Start</div>
+      <div id="startMenu">
+          <div id="left">
+              <div class="b">
+                  Windows
+                  <span class="num95">95</span>
+              </div>
+          </div>
+          <div class="menuItem expander">Programs</div>
+          <div class="menuItem expander">Documents</div>
+          <div class="menuItem expander">Settings</div>
+          <div class="menuItem">Find</div>
+          <div class="menuItem">Help</div>
+          <div class="menuItem">Run</div>
+          <div class="divider"></div>
+          <div class="menuItem" id="shutdown">Sh<span style="text-decoration:underline;">u</span>t Down</div>
+      </div>
+      <div id="notifications">
+          <div id="clock"></div>
+      </div>
+  </div>
+</div>
   </body>
 </html>

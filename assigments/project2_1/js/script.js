@@ -3,14 +3,19 @@
 /********************************************************************
 
 Automated text generator//content generator
-This starts off with a start page, with some instructions once you drag then pen, it leads you to the main page, with
-an animated van gogh background and his letters to theo and paintings in loop with Beethoven's Moonlight Sonata playing.
-To start seeing the dialogs you would have to move your mouse and click to hear the typewriter sound!
-After finishing reading each letter, click on send for some hover action.
-
-Nesreen Galal
+I was inspired to do this idea when I read this in the article
+when the author talked about "pressing contemporary issues such as racial and gender bias in big data and machine intelligence-driven systems"
+The T-shirts he mentioned that were sold on Amazon using an unchecked list of verbs and pronouns with an online image generator,
+like “Keep Calm and Rape A Lot” tshirts and “Keep Calm and Hit Her”.
+I decided to use a gibberish random text online generator, and he was right.
+Most of words targeted towards women is marriage, and "his joy of sex ", "mistress", "fail lady", "Ladies bed wisdom theirs men months set.""
+"Age attended betrayed her man", they all show sexism towards women and negative connotation. It shows the negrative gender bias that the
+author was explaining.
 
 Project inspired by project 1 and itisasifyouweremakinglove by Pippin
+I got help from these websites to achieve this project:
+windows 95 settings code // desktop navigation thanks to  https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE
+login form windows 95 thanks to  https://www.cssscript.com/windows-95-theme-bootstrap/
 *********************************************************************/
 
 $(document).ready(setup);
@@ -20,7 +25,7 @@ $(document).ready(setup);
 const MIN_LETTER_DELAY_TIME = 10000;
 const MAX_LETTER_DELAY_TIME = 20000;
 //variable when the mouse moves and to track the mouse movement for the pop up dialog/letter to initiate
-const MAX_MOUSE_MOVES = 30;
+const MAX_MOUSE_MOVES = 100;
 let mouseMoves = 0;
 //audio typewriter key, sounds work once you click on the the web page
 let dialogSound = new Audio("assets/sounds/WINDOWS_ERROR SOUND.mp3"); //https://www.youtube.com/watch?v=iqztd7uMvVI
@@ -131,3 +136,44 @@ function fadeIn() {
 function randomInRange(min, max) {
   return min + Math.random() * (max - min);
 }
+
+$(document).ready(function () {
+        startTime();
+        $('#startMenu').hide();
+        $('#start').click(function () {
+            $('#startMenu').toggle();
+            $(this).toggleClass('startClick');
+        });
+
+        $('#desktop').click(function () {
+            $('#startMenu').hide();
+            $('#start').removeClass('startClick').addClass('startRest');
+        })
+
+
+        $('.desktopIcon').dblclick(function () {
+            alert($(this).text());
+        });
+
+    });
+
+
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        // add a zero in front of numbers<10
+        m = checkTime(m);
+        s = checkTime(s);
+        var hd = h;
+        $('#clock').html((hd = 0 ? "12" : hd > 12 ? hd - 12 : hd) + ":" + m + " " + (h < 12 ? "AM" : "PM"));
+        t = setTimeout(function () { startTime() }, 500);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
