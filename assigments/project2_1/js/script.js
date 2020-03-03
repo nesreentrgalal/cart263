@@ -33,13 +33,14 @@ let dialogSound = new Audio("assets/sounds/WINDOWS_ERROR SOUND.mp3"); //https://
 let $texts;
 
 function setup() {
+  //responsive voices of hastags being ironic and contradicting the text
   responsiveVoice.speak("#unbais, #safe #peace #ungenerated #unbais #truth #real", "UK English Male", {
     rate: 1,
     volume: 1
   });
 }
 
-//letters written by vincent van gogh to theo, his brother
+//gender biased text generator
 let texts = [
   "But why smiling man her imagine married.",
   "Shyness mention married son she his started now. ",
@@ -64,7 +65,7 @@ let texts = [
 //when when you move the mouse, it triggers the mousemoved function
 $(document).on("mousemove", mouseMoved);
 
-// when mouse moves, add a letter
+// when mouse moves, add a dialog
 function mouseMoved() {
   // Increase the number of tracked moves
   mouseMoves = mouseMoves + 1;
@@ -80,7 +81,7 @@ function mouseMoved() {
 function addLetter() {
   //the dialog is the dialog id
   let $dialog = $("#Dialog");
-  //background image of dialog, the letter image
+  //
   $("#Dialog")
     .parent()
     .css({
