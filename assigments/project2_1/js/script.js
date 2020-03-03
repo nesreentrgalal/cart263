@@ -33,10 +33,10 @@ let dialogSound = new Audio("assets/sounds/WINDOWS_ERROR SOUND.mp3"); //https://
 let $texts;
 
 function setup() {
-responsiveVoice.speak("#unbais, #safe #peace #ungenerated #unbais #truth #real", "UK English Male", {
-  rate: 1,
-  volume: 1
-});
+  responsiveVoice.speak("#unbais, #safe #peace #ungenerated #unbais #truth #real", "UK English Male", {
+    rate: 1,
+    volume: 1
+  });
 }
 
 //letters written by vincent van gogh to theo, his brother
@@ -93,7 +93,7 @@ function addLetter() {
   $("#Dialog").html(`<p>${text}</p>`);
   // transform the dialog into the dialog widget
   $("#Dialog").dialog({
-     width: '310px',
+    width: '310px',
     height: 'auto',
     modal: true,
     //button to close the dialog and opacity of wrapper effect, it fades out
@@ -143,43 +143,45 @@ function randomInRange(min, max) {
   return min + Math.random() * (max - min);
 }
 
-$(document).ready(function () {
-        startTime();
-        $('#startMenu').hide();
-        $('#start').click(function () {
-            $('#startMenu').toggle();
-            $(this).toggleClass('startClick');
-        });
+$(document).ready(function() {
+  startTime();
+  $('#startMenu').hide();
+  $('#start').click(function() {
+    $('#startMenu').toggle();
+    $(this).toggleClass('startClick');
+  });
 
-        $('#desktop').click(function () {
-            $('#startMenu').hide();
-            $('#start').removeClass('startClick').addClass('startRest');
-        })
-
-
-        $('.desktopIcon').dblclick(function () {
-            alert($(this).text());
-        });
-
-    });
+  $('#desktop').click(function() {
+    $('#startMenu').hide();
+    $('#start').removeClass('startClick').addClass('startRest');
+  })
 
 
-    function startTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        // add a zero in front of numbers<10
-        m = checkTime(m);
-        s = checkTime(s);
-        var hd = h;
-        $('#clock').html((hd = 0 ? "12" : hd > 12 ? hd - 12 : hd) + ":" + m + " " + (h < 12 ? "AM" : "PM"));
-        t = setTimeout(function () { startTime() }, 500);
-    }
+  $('.desktopIcon').dblclick(function() {
+    alert($(this).text());
+  });
 
-    function checkTime(i) {
-        if (i < 10) {
-            i = "0" + i;
-        }
-        return i;
-    }
+});
+
+
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  // add a zero in front of numbers<10
+  m = checkTime(m);
+  s = checkTime(s);
+  var hd = h;
+  $('#clock').html((hd = 0 ? "12" : hd > 12 ? hd - 12 : hd) + ":" + m + " " + (h < 12 ? "AM" : "PM"));
+  t = setTimeout(function() {
+    startTime()
+  }, 500);
+}
+
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}

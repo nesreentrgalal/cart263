@@ -3,7 +3,7 @@
     WIN95.CSS
     https://github.com/AlexBSoft/win95.css
     Author: Alex B (alex-b.me)
-    windows 95 settings code // desktop navigation css 
+    windows 95 settings code // desktop navigation css
     Version: 1.1.0
 
 */
@@ -229,15 +229,15 @@ centering in the page with the help of https://www.w3.org/Style/Examples/007/cen
     /* OR #000082 is better?*/
 }
 .card-header{
-    background: -webkit-linear-gradient(left,#08216b,#a5cef7);
-    color: #fff;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-top: 2px;
-    padding-bottom: 1px;
-    text-align: left;
+    background: -webkit-linear-gradient(left, #08216b, #a5cef7);
+  color: #fff;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 2px;
+  padding-bottom: 1px;
+  text-align: left;
 }
 .card-header.icon{
     padding-left: 4px;
