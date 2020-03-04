@@ -29,7 +29,7 @@ const MAX_MOUSE_MOVES = 100;
 let mouseMoves = 0;
 //windows 95 error sound, sounds work once you click on the the web page
 let dialogSound = new Audio("assets/sounds/WINDOWS_ERROR SOUND.mp3"); //https://www.youtube.com/watch?v=iqztd7uMvVI
-
+//variable for text 
 let $texts;
 
 function setup() {
