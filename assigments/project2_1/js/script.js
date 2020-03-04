@@ -70,14 +70,14 @@ function mouseMoved() {
   // Check if the mouse exceeds 5
   if (mouseMoves > MAX_MOUSE_MOVES) {
     // If so, add a dialog
-    addLetter();
+    addDialog();
     // And reset the counter
     mouseMoves = 0;
     $("#Dialog").show();
   }
 }
 //Add letter
-function addLetter() {
+function addDialog() {
   //the dialog is the dialog id
   let $dialog = $("#Dialog");
 
@@ -118,7 +118,7 @@ function closeDialog() {
   // After closing a dialog, a new comes up between the min delay time and max delay time
   let delay = randomInRange(MIN_DIALOG_DELAY_TIME, MAX_DIALOG_DELAY_TIME);
   // Set a timeout and add a new dialog after the delay. Dismiss a dialog, and you just get another one back
-  setTimeout(addLetter, delay);
+  setTimeout(addDialog, delay);
 }
 
 // randomInRange()
@@ -148,6 +148,7 @@ function startTime() {
   m = checkTime(m);
   s = checkTime(s);
   var hd = h;
+  //clock format aka how the clock will look
   $('#clock').html((hd = 0 ? "12" : hd > 12 ? hd - 12 : hd) + ":" + m + " " + (h < 12 ? "AM" : "PM"));
   t = setTimeout(function() {
     startTime()
@@ -162,5 +163,5 @@ function checkTime(i) {
 }
 //show image by getting it's ID from the index, and make it visible
 function showImage(){
-    document.getElementById('loadingImage').style.visibility="visible";
+    document.getElementById('loadImage').style.visibility="visible";
     }

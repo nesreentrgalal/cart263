@@ -35,9 +35,11 @@
   background-color: yellow;
 }
 
-#hello {
-  font-family: Courier;
-}
+/*
+
+Body style and for the navigation windows 95 slidebar
+
+*/
 
 body {
   background-size: cover;
@@ -170,13 +172,6 @@ body {
   height: 21px;
 }
 
-#desktop {
-  height: calc(100% - 26px);
-  background-color: transparent;
-  width: 100%;
-  padding: 10px;
-}
-
 #clock {
   display: inline-block;
   float: right;
@@ -190,7 +185,11 @@ body {
   border-bottom: ridge 1px grey;
   margin: 2px;
 }
+/*
 
+for image and button of the "keep calm and hit her"
+
+*/
 #unbais {
 right: 500px;
 position: fixed;
