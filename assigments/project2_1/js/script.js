@@ -6,7 +6,7 @@ Automated text generator//content generator
 I was inspired to do this idea when I read this in the article
 when the author talked about "pressing contemporary issues such as racial and gender bias in big data and machine intelligence-driven systems"
 The T-shirts he mentioned that were sold on Amazon using an unchecked list of verbs and pronouns with an online image generator,
-like “Keep Calm and Rape A Lot” tshirts and “Keep Calm and Hit Her”.
+like “Keep Calm and Rape A Lot” tshirts and “Keep Calm and Hit Her”. Which is why I also included the button unbiased that shows the "Keep Calm and Hit Her"
 I decided to use a gibberish random text online generator https://randomtextgenerator.com/, and he was right.
 Most of words targeted towards women is marriage, and "his joy of sex ", "mistress", "fail lady", "Ladies bed wisdom theirs men months set.""
 "Age attended betrayed her man", they all show sexism towards women and negative connotation. It shows the negrative gender bias that the
@@ -22,8 +22,8 @@ $(document).ready(setup);
 
 // Constants to determine how long after dismissing a dialog we should
 // add a new one to the page
-const MIN_LETTER_DELAY_TIME = 500;
-const MAX_LETTER_DELAY_TIME = 1500;
+const MIN_DIALOG_DELAY_TIME = 500;
+const MAX_DIALOG_DELAY_TIME = 1500;
 //variable when the mouse moves and to track the mouse movement for the pop up dialog/letter to initiate
 const MAX_MOUSE_MOVES = 100;
 let mouseMoves = 0;
@@ -34,7 +34,7 @@ let $texts;
 
 function setup() {
   //responsive voices of hastags being ironic and contradicting the text
-  responsiveVoice.speak("#unbais, #safe #peace #ungenerated #unbais #truth #real", "UK English Female");
+  responsiveVoice.speak("#unbais, #safe #peace #ungenerated #unbais #truth #real #unbaised", "UK English Female");
 }
 
 
@@ -116,7 +116,7 @@ function closeDialog() {
   dialogSound.currentTime = 0;
   dialogSound.play();
   // After closing a dialog, a new comes up between the min delay time and max delay time
-  let delay = randomInRange(MIN_LETTER_DELAY_TIME, MAX_LETTER_DELAY_TIME);
+  let delay = randomInRange(MIN_DIALOG_DELAY_TIME, MAX_DIALOG_DELAY_TIME);
   // Set a timeout and add a new dialog after the delay. Dismiss a dialog, and you just get another one back
   setTimeout(addLetter, delay);
 }
@@ -126,7 +126,7 @@ function closeDialog() {
 function randomInRange(min, max) {
   return min + Math.random() * (max - min);
 }
-
+//activate once the document is ready (index page)
 $(document).ready(function() {
   //activate the start time function for the time to show in the bar thanks to https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE
   startTime();
