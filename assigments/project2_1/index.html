@@ -12,6 +12,7 @@
 
   <!-- My script(s) -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
     <!--CSS for the dialog -->
   <link rel="stylesheet" href="css/jquery-ui.min.css">
  <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
@@ -24,6 +25,10 @@
 </head>
 
 <body>
+  <div id ="unbais">
+    <input type="button"   value="unbiased" onclick="showImage();"/>
+  <img id="loadingImage" src="assets/images/keepcalm.png" style="visibility:hidden"/>
+</div>
   <style>
     body {
       background-image: url("assets/images/background.png");
@@ -35,6 +40,7 @@
   <div id="Dialog" hidden>
 
   </div>
+
   <!-- windows 95 settings code // desktop navigation code thanks to https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE-->
     <!--hover works on this navbar-->
   <div id="taskbar">

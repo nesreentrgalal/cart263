@@ -37,6 +37,7 @@ function setup() {
   responsiveVoice.speak("#unbais, #safe #peace #ungenerated #unbais #truth #real", "UK English Female");
 }
 
+
 //gender biased text generator
 let texts = [
   "But why smiling man her imagine married.",
@@ -79,13 +80,8 @@ function mouseMoved() {
 function addLetter() {
   //the dialog is the dialog id
   let $dialog = $("#Dialog");
-  //
-  $("#Dialog")
-    .parent()
-    .css({
-      //background: "url(assets/images/letter.png)" //https://i.pinimg.com/originals/4c/65/f9/4c65f913798dcd566fb929d0973a37e6.jpg
-    });
-  // Choose a random letter from the array
+
+ // Choose a random text from the array
   let text = texts[Math.floor(randomInRange(0, texts.length))];
 
   // format the letter as a p which is paragraph and to add letters to the dialog id
@@ -124,10 +120,7 @@ function closeDialog() {
   // Set a timeout and add a new dialog after the delay. Dismiss a dialog, and you just get another one back
   setTimeout(addLetter, delay);
 }
-//fadeIn function to return to normal opacity
-//function fadeIn() {
-  //$("body").fadeTo("fast", 1);
-//}
+
 // randomInRange()
 // Returns a random number between min and max
 function randomInRange(min, max) {
@@ -167,3 +160,7 @@ function checkTime(i) {
   }
   return i;
 }
+//show image by getting it's ID from the index, and make it visible
+function showImage(){
+    document.getElementById('loadingImage').style.visibility="visible";
+    }

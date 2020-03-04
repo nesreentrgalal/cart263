@@ -1,5 +1,5 @@
 #Dialog {
-  width: 100%;
+  width: 50%;
   border-top: solid 2px black;
   border-left: solid 2px black;
   border-right: 2px solid white;
@@ -189,4 +189,11 @@ body {
   border-top: ridge 1px white;
   border-bottom: ridge 1px grey;
   margin: 2px;
+}
+
+#unbais {
+right: 500px;
+position: fixed;
+ width: 50%;
+ bottom: 10px;
 }
