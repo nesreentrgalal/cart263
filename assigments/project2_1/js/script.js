@@ -140,7 +140,7 @@ $(document).ready(function() {
   });
 });
 
-//code for the time to work in the navbar thanks to https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE
+//code for the time to work in the footer start menu thanks to https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE
 function startTime() {
   var today = new Date();
   // to get hrs, mintues and seconds depending on the day and date
