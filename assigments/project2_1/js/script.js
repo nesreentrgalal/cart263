@@ -35,7 +35,7 @@ let $texts;
 function setup() {
   //responsive voices of hastags being ironic to the text and contradicting the text
   responsiveVoice.speak(
-    "#unbias, #safe #peace #ungenerated #unbais #truth #real #unbiased #notsexist ",
+    "Hello welcome, #unbias, #safe #peace #ungenerated #unbias #truth #real #unbiased #notsexist #clean #equality. this is not generated content don't believe what the article tells you. I repeat this is not automated content. We believe in safety and a clean environement. Thank you",
     "UK English Female",
     {
       pitch: 0.2,
