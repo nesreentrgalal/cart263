@@ -11,4 +11,4 @@ I decided to go with Windows 95 aesthetics, since that's how I remember surfing 
 How it works??
 You have to move the mouse around till the dialog pops up, to read the next one you can either move your mouse again or click on close which will activate the windows error sound, and click on the unbias button to see the irony.
 There is also the time on the footer navbar and you can hover over the settings in the start menu, I tried as best as I can
-to modify this code to my own. Thanks to Alex B (alex-b.me) and CodeSeeker. I wanted the responsiveVoice to use hashtags to symbolize the hastag the social media uses online. The responsiveVoice is contradicting symbolize the idea that we always forget that the internet is not neutral and that it is not a safe place sometimes.
+to modify this code to my own. Thanks to Alex B (alex-b.me) and CodeSeeker. I wanted the responsiveVoice to use hashtags to symbolize the hastag the social media uses online. The responsiveVoice is contradicting symbolize the idea that we always forget that the internet is not neutral and that it is not a safe place sometimes. I had to admit I have focused a lotttt on aesthetics. 
