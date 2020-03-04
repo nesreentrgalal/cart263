@@ -14,7 +14,7 @@ author was explaining.
 
 Project inspired by project 1 and itisasifyouweremakinglove by Pippin
 I got help from these websites to achieve this project:
-windows 95 settings code // desktop navigation and time thanks to  https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE
+windows 95  windows 95 settings code // footer navbar and start menu navigation code and time thanks to  https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE
 login form windows 95 thanks to  https://www.cssscript.com/windows-95-theme-bootstrap/
 *********************************************************************/
 
@@ -29,7 +29,7 @@ const MAX_MOUSE_MOVES = 100;
 let mouseMoves = 0;
 //windows 95 error sound, sounds work once you click on the the web page
 let dialogSound = new Audio("assets/sounds/WINDOWS_ERROR SOUND.mp3"); //https://www.youtube.com/watch?v=iqztd7uMvVI
-//variable for text 
+//variable for text
 let $texts;
 
 function setup() {

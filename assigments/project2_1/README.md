@@ -7,3 +7,8 @@ Most of words targeted towards women is marriage, and "his joy of sex ", "mistre
 author was explaining.
 TBH, This project was really tough, I was trying to get out of my comfort zone which was kinda overwhelming since there is different css like win95 css , javascripts and bootstrap css like the login form I modified but was thanks to codeseek which is a library for developers. I love the concept because the article talks about the web, and how do we use the web mostly? through the computer.
 I decided to go with Windows 95 aesthetics, since that's how I remember surfing the web as a young kid and since the article does mention kids using the internet in our modern generation. So I wanted to add a mix of modern and vintage.  At the same time I didn't want it to be compelety the same which is why the dialog doesnt look like the typical windows 95 dialog.But nevertheless, I proud that I was able to make it work.  
+
+How it works??
+You have to move the mouse around till the dialog pops up, to read the next one you can either move your mouse again or click on close which will activate the windows error sound, and click on the unbias button to see the irony.
+There is also the time on the footer navbar and you can hover over the settings in the start menu, I tried as best as I can
+to modify this code to my own. Thanks to Alex B (alex-b.me) and CodeSeeker.
