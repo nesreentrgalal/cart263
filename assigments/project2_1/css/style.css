@@ -43,7 +43,7 @@ Body style and for the navigation windows 95 slidebar
 
 body {
   background-size: cover;
-  font-family: 'MS Reference Sans Serif';
+  font-family: "MS Reference Sans Serif";
   color: black;
 }
 
@@ -58,7 +58,8 @@ body {
 }
 
 #start {
-  background: url(http://zombiechops.com/wp-content/uploads/2016/07/icon.png) left center no-repeat;
+  background: url(http://zombiechops.com/wp-content/uploads/2016/07/icon.png)
+    left center no-repeat;
   background-size: 17px 15px;
   text-align: right;
   font-weight: bolder;
@@ -115,7 +116,7 @@ body {
 }
 
 #startMenu .expander:after {
-  content: '▶';
+  content: "▶";
   float: right;
   margin-right: 5px;
 }
@@ -191,8 +192,8 @@ for image and button of the "keep calm and hit her"
 
 */
 #unbais {
-right: 500px;
-position: fixed;
- width: 50%;
- bottom: 10px;
+  right: 500px;
+  position: fixed;
+  width: 50%;
+  bottom: 10px;
 }

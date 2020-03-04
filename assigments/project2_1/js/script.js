@@ -33,10 +33,16 @@ let dialogSound = new Audio("assets/sounds/WINDOWS_ERROR SOUND.mp3"); //https://
 let $texts;
 
 function setup() {
-  //responsive voices of hastags being ironic and contradicting the text
-  responsiveVoice.speak("#unbais, #safe #peace #ungenerated #unbais #truth #real #unbaised", "UK English Female");
+  //responsive voices of hastags being ironic to the text and contradicting the text
+  responsiveVoice.speak(
+    "#unbias, #safe #peace #ungenerated #unbais #truth #real #unbiased #notsexist ",
+    "UK English Female",
+    {
+      pitch: 0.2,
+      rate: 0.8
+    }
+  );
 }
-
 
 //gender biased text generator
 let texts = [
@@ -56,9 +62,6 @@ let texts = [
   "She wholly fat who window extent either formal.",
   "That know ask case sex ham dear her spot."
 ];
-
-
-
 
 //when when you move the mouse, it triggers the mousemoved function
 $(document).on("mousemove", mouseMoved);
@@ -81,18 +84,18 @@ function addDialog() {
   //the dialog is the dialog id
   let $dialog = $("#Dialog");
 
- // Choose a random text from the array
+  // Choose a random text from the array
   let text = texts[Math.floor(randomInRange(0, texts.length))];
 
   // format the letter as a p which is paragraph and to add letters to the dialog id
   $("#Dialog").html(`<p>${text}</p>`);
   // transform the dialog into the dialog widget
   $("#Dialog").dialog({
-    width: '310px',
-    height: 'auto',
+    width: "310px",
+    height: "auto",
     modal: true,
     // The 'close' option lets us specify a function to call when the dialog is closed
-      close: closeDialog,
+    close: closeDialog,
 
     // The 'containment' option lets us specify where the dialog can go on the screen. 'body' means it will be
     // contained within the body tag, and can't be dragged out of it.
@@ -130,10 +133,10 @@ function randomInRange(min, max) {
 $(document).ready(function() {
   //activate the start time function for the time to show in the bar thanks to https://www.codeseek.co/ddietle/windows-95-css-amp-jquery-flavor-zBjpVE
   startTime();
-//start navbar
-  $('#start').click(function() {
-    $('#startMenu').toggle();
-    $(this).toggleClass('startClick');
+  //start navbar
+  $("#start").click(function() {
+    $("#startMenu").toggle();
+    $(this).toggleClass("startClick");
   });
 });
 
@@ -149,9 +152,15 @@ function startTime() {
   s = checkTime(s);
   var hd = h;
   //clock format aka how the clock will look
-  $('#clock').html((hd = 0 ? "12" : hd > 12 ? hd - 12 : hd) + ":" + m + " " + (h < 12 ? "AM" : "PM"));
+  $("#clock").html(
+    (hd = 0 ? "12" : hd > 12 ? hd - 12 : hd) +
+      ":" +
+      m +
+      " " +
+      (h < 12 ? "AM" : "PM")
+  );
   t = setTimeout(function() {
-    startTime()
+    startTime();
   }, 500);
 }
 // add a zero in front of numbers<10
@@ -162,6 +171,6 @@ function checkTime(i) {
   return i;
 }
 //show image by getting it's ID from the index, and make it visible
-function showImage(){
-    document.getElementById('loadImage').style.visibility="visible";
-    }
+function showImage() {
+  document.getElementById("loadImage").style.visibility = "visible";
+}
