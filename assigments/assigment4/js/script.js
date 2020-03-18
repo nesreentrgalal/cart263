@@ -70,7 +70,7 @@ if (
   roomArticle = "an";
 }
 
-// New dataset
+// New dataset art movements that ends with isms
 let ism = getRandomElement(data.isms);
 console.log(ism);
 let ismArticle = "a";
@@ -85,10 +85,25 @@ ism.charAt(0).toLowerCase() === "u"
 ismArticle = "an";
 }
 
+// New dataset names that are monsters
+let monster = getRandomElement(data.names);
+console.log(monster);
+let monsterArticle = "a";
+//this fixes the indefinite article for the vowels
+if (
+monster.charAt(0).toLowerCase() === "a" ||
+monster.charAt(0).toLowerCase() === "e" ||
+monster.charAt(0).toLowerCase() === "i" ||
+monster.charAt(0).toLowerCase() === "o" ||
+monster.charAt(0).toLowerCase() === "u"
+) {
+monsterArticle = "an";
+}
   // Now we can construct our description with a template string
   // We have the basic structure of a sentence and we substitute in the
   // values we've just calculated
-  let description = `${condiment} ${verb} like a ${cat} in a ${room}.`;
+
+  let description = `${condiment} ${verb} like ${catArticle} ${cat} in ${roomArticle} ${room}.`;
 
   // Finally, we add it to the page and hey presto!
   $('body').append(description)
