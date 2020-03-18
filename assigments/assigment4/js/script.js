@@ -1,5 +1,3 @@
-
-
 /********************************************************************
 Nesreen Galal
 Assignment 4: Condiments Cacophony
@@ -17,7 +15,7 @@ $(document).ready(function() {
   $.getJSON('data/data.json')
     .done(gotData)
     .fail(dataError);
-    $(document).one("click", mousePressed);
+  $(document).one("click", mousePressed);
 });
 
 // gotData (data)
@@ -42,9 +40,8 @@ function gotData(data) {
 
   // Now the cat
   let cat = getRandomElement(data.cats);
-  console.log(cat);
   let catArticle = "a";
-//this fixes the indefinite article for the vowels
+  //this fixes the indefinite article for the vowels
   if (
     cat.charAt(0).toLowerCase() === "a" ||
     cat.charAt(0).toLowerCase() === "e" ||
@@ -57,55 +54,48 @@ function gotData(data) {
 
   // Same again for room
   let room = getRandomElement(data.rooms);
-  console.log(room);
-let roomArticle = "a";
-//this fixes the indefinite article for the vowels
-if (
-  room.charAt(0).toLowerCase() === "a" ||
-  room.charAt(0).toLowerCase() === "e" ||
-  room.charAt(0).toLowerCase() === "i" ||
-  room.charAt(0).toLowerCase() === "o" ||
-  room.charAt(0).toLowerCase() === "u"
-) {
-  roomArticle = "an";
-}
+  let roomArticle = "a";
+  //this fixes the indefinite article for the vowels
+  if (
+    room.charAt(0).toLowerCase() === "a" ||
+    room.charAt(0).toLowerCase() === "e" ||
+    room.charAt(0).toLowerCase() === "i" ||
+    room.charAt(0).toLowerCase() === "o" ||
+    room.charAt(0).toLowerCase() === "u"
+  ) {
+    roomArticle = "an";
+  }
 
-// New dataset art movements that ends with isms
-let ism = getRandomElement(data.isms);
-console.log(ism);
-let ismArticle = "a";
-//this fixes the indefinite article for the vowels
-if (
-ism.charAt(0).toLowerCase() === "a" ||
-ism.charAt(0).toLowerCase() === "e" ||
-ism.charAt(0).toLowerCase() === "i" ||
-ism.charAt(0).toLowerCase() === "o" ||
-ism.charAt(0).toLowerCase() === "u"
-) {
-ismArticle = "an";
-}
+  // New dataset art movements that ends with isms
+  let ism = getRandomElement(data.isms);
+  let ismArticle = "a";
+  //this fixes the indefinite article for the vowels
+  if (
+    ism.charAt(0).toLowerCase() === "a" ||
+    ism.charAt(0).toLowerCase() === "e" ||
+    ism.charAt(0).toLowerCase() === "i" ||
+    ism.charAt(0).toLowerCase() === "o" ||
+    ism.charAt(0).toLowerCase() === "u"
+  ) {
+    ismArticle = "an";
+  }
 
-// New dataset names that are monsters names 
-let monster = getRandomElement(data.names);
-console.log(monster);
-let monsterArticle = "a";
-//this fixes the indefinite article for the vowels
-if (
-monster.charAt(0).toLowerCase() === "a" ||
-monster.charAt(0).toLowerCase() === "e" ||
-monster.charAt(0).toLowerCase() === "i" ||
-monster.charAt(0).toLowerCase() === "o" ||
-monster.charAt(0).toLowerCase() === "u"
-) {
-monsterArticle = "an";
-}
-  // Now we can construct our description with a template string
-  // We have the basic structure of a sentence and we substitute in the
-  // values we've just calculated
-
+  // New dataset names that are monsters names
+  let monster = getRandomElement(data.names);
+  let monsterArticle = "a";
+  //this fixes the indefinite article for the vowels
+  if (
+    monster.charAt(0).toLowerCase() === "a" ||
+    monster.charAt(0).toLowerCase() === "e" ||
+    monster.charAt(0).toLowerCase() === "i" ||
+    monster.charAt(0).toLowerCase() === "o" ||
+    monster.charAt(0).toLowerCase() === "u"
+  ) {
+    monsterArticle = "an";
+  }
+  // the description with a template string with the values and variables created
   let description = `${condiment} and ${ismArticle} ${ism} ${verb} like ${catArticle} ${cat} in ${roomArticle} ${room} because of ${monsterArticle} ${monster}.`;
-
-  // Finally, we add it to the page and hey presto!
+  // add it to the page
   $('body').append(description)
 }
 
