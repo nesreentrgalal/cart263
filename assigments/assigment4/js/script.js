@@ -85,7 +85,7 @@ ism.charAt(0).toLowerCase() === "u"
 ismArticle = "an";
 }
 
-// New dataset names that are monsters
+// New dataset names that are monsters names 
 let monster = getRandomElement(data.names);
 console.log(monster);
 let monsterArticle = "a";
@@ -103,7 +103,7 @@ monsterArticle = "an";
   // We have the basic structure of a sentence and we substitute in the
   // values we've just calculated
 
-  let description = `${condiment} ${verb} like ${catArticle} ${cat} in ${roomArticle} ${room}.`;
+  let description = `${condiment} and ${ismArticle} ${ism} ${verb} like ${catArticle} ${cat} in ${roomArticle} ${room} because of ${monsterArticle} ${monster}.`;
 
   // Finally, we add it to the page and hey presto!
   $('body').append(description)
