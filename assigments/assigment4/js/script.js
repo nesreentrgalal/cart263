@@ -1,17 +1,10 @@
-/*
 
-Condiments
-Pippin Barr
 
-Chooses random words from local JSON data to fill out a sentence
-describing a condiment based on cats and rooms... weird.
-
-Uses:
-
-Corpora
-https://github.com/dariusk/corpora
-
-*/
+/********************************************************************
+Nesreen Galal
+Assignment 4: Condiments Cacophony
+Original code by Pippin Barr
+*********************************************************************/
 
 $(document).ready(function() {
 
@@ -24,6 +17,7 @@ $(document).ready(function() {
   $.getJSON('data/data.json')
     .done(gotData)
     .fail(dataError);
+    $(document).one("click", mousePressed);
 });
 
 // gotData (data)
@@ -74,4 +68,8 @@ function dataError(request, text, error) {
 // Returns a random element from the array provided
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
+}
+// Function mousePressed to reload the page when the mouse is clicked.
+function mousePressed() {
+  location.reload(true);
 }
