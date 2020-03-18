@@ -42,9 +42,48 @@ function gotData(data) {
 
   // Now the cat
   let cat = getRandomElement(data.cats);
+  console.log(cat);
+  let catArticle = "a";
+//this fixes the indefinite article for the vowels
+  if (
+    cat.charAt(0).toLowerCase() === "a" ||
+    cat.charAt(0).toLowerCase() === "e" ||
+    cat.charAt(0).toLowerCase() === "i" ||
+    cat.charAt(0).toLowerCase() === "o" ||
+    cat.charAt(0).toLowerCase() === "u"
+  ) {
+    catArticle = "an";
+  }
 
   // Same again for room
   let room = getRandomElement(data.rooms);
+  console.log(room);
+let roomArticle = "a";
+//this fixes the indefinite article for the vowels
+if (
+  room.charAt(0).toLowerCase() === "a" ||
+  room.charAt(0).toLowerCase() === "e" ||
+  room.charAt(0).toLowerCase() === "i" ||
+  room.charAt(0).toLowerCase() === "o" ||
+  room.charAt(0).toLowerCase() === "u"
+) {
+  roomArticle = "an";
+}
+
+// New dataset
+let ism = getRandomElement(data.isms);
+console.log(ism);
+let ismArticle = "a";
+//this fixes the indefinite article for the vowels
+if (
+ism.charAt(0).toLowerCase() === "a" ||
+ism.charAt(0).toLowerCase() === "e" ||
+ism.charAt(0).toLowerCase() === "i" ||
+ism.charAt(0).toLowerCase() === "o" ||
+ism.charAt(0).toLowerCase() === "u"
+) {
+ismArticle = "an";
+}
 
   // Now we can construct our description with a template string
   // We have the basic structure of a sentence and we substitute in the
