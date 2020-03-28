@@ -1,54 +1,22 @@
 <html>
 	<head>
 		<title>startpage</title>
-      <link rel="stylesheet" type="text/css" href="css/style.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel="stylesheet" type="text/css" href="css/retroo.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <script  src="js/retro.js"></script>
 
-
-		<style>
-
-
-		</style>
 	</head>
-	<body>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
+
+
 	<script src="js/libraries/three.js"></script>
-		<script>
-      var grid = document.querySelector('.m-grid');
-       var tl = new TimelineMax();
 
-    TweenLite.set(grid, {
-      transformPerspective: 400,
-      transformOrigin: '50% 50%'
-    });
 
-    var anim2Props = {
-      rotationX: 75,
-      y: '0%',
-      ease: Power2.easeIn,
-      transformPerspective: 300,
-      onComplete: function onComplete() {
-        return grid.classList.add('is-animating');
-      }
 
-    };
 
-    tl.to(grid, 1, { scaleY: 1.5, ease: Power3.easeIn }).to(grid, 1, anim2Props, '+=0.3').to('.m-logo__wrap', 1, { scale: 1 });
-		</script>
-	</body>
-
-  <!DOCTYPE html>
-  <html lang="en" >
-
-  <head>
     <meta charset="UTF-8">
-    <title>Retro 80's style grid and logo</title>
 
-
-
-
-  </head>
 
   <body>
 
