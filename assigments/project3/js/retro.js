@@ -1,24 +1,22 @@
 
-
-
-const grid = document.querySelector('.m-grid')
-const tl = new TimelineMax();
+/*Downloaded from https://www.codeseek.co/aderaaij/retro-80andaposs-style-grid-and-logo-amqoVJ */
+var grid = document.querySelector('.m-grid');
+var tl = new TimelineMax();
 
 TweenLite.set(grid, {
   transformPerspective: 400,
-  transformOrigin: '50% 50%',
+  transformOrigin: '50% 50%'
 });
 
-const anim2Props = {
+var anim2Props = {
   rotationX: 75,
   y: '0%',
   ease: Power2.easeIn,
   transformPerspective: 300,
-  onComplete: () => grid.classList.add('is-animating')
+  onComplete: function onComplete() {
+    return grid.classList.add('is-animating');
+  }
 
 };
 
-tl
-  .to(grid, 1, {scaleY: 1.5, ease: Power3.easeIn})
-  .to(grid, 1, anim2Props, '+=0.3')
-  .to('.m-logo__wrap', 1, {scale: 1})
+tl.to(grid, 1, { scaleY: 1.5, ease: Power3.easeIn }).to(grid, 1, anim2Props, '+=0.3').to('.m-logo__wrap', 1, { scale: 1 });
