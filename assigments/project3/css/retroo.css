@@ -19,7 +19,7 @@ body {
 
 .eightys-text {
   color: #FF0092;
-  font-family: 'Mr Dafoe', cursive;
+  font-family: 'Audiowide', cursive;
   font-size: 80px;
   position: absolute;
   top: 0;
@@ -105,5 +105,5 @@ body {
   right: 630px;
   background-color: #FF0092;
   color: white;
-  font-family: 'Audiowide';
+  font-family: 'Audiowide', cursive;
 }
