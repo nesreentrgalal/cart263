@@ -60,3 +60,37 @@ body {
             transform: perspective(300px) rotateX(80deg) translateY(5.8%);
   }
 }
+/* sun animation using keyframes */
+
+#circle {
+  position: relative;
+  margin: 20px auto;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#bars {
+  margin-top: -900px;
+}
+
+#circle .bar {
+  position: relative;
+  display: inline-block;
+  margin: 6px auto;
+  width: 500px;
+  height: 10px;
+  background: linear-gradient(pink, yellow);
+  box-shadow: 3px 5px 10px #46579D;
+  animation: sunset 5s 0s infinite linear;
+}
+
+@keyframes sunset {
+  0% {
+    top: 10px
+  }
+  100% {
+    top: 190px
+  }
+}
