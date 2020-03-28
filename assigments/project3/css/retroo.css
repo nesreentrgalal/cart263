@@ -19,8 +19,8 @@ body {
 
 .eightys-text {
   color: #FF0092;
-  font-family: 'Audiowide', cursive;
-  font-size: 30px;
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 80px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -30,6 +30,9 @@ body {
   height: 80px;
   margin: auto;
   text-shadow: 0 0 12px rgba(186, 1, 255, 0.8);
+  -webkit-text-stroke: 1px #f008b7;
+ -webkit-filter: drop-shadow(2px 2px 20px #f008b7);
+ z-index: 20;
 }
 
 .grid {
@@ -93,4 +96,14 @@ body {
   100% {
     top: 190px
   }
+}
+
+.w3-button {
+  width:150px;
+  position: absolute;
+  bottom: 100px;
+  right: 630px;
+  background-color: #FF0092;
+  color: white;
+  font-family: 'Mr Dafoe', cursive;
 }
