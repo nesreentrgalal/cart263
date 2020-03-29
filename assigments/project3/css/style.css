@@ -13,13 +13,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'VT323', monospace;
-  font-size: 4em;
+  font-size: 2em;
   font-weight: bold;
   background-color: #000;;
   color: #50a756;
   text-transform: lowercase;
   position: absolute;
-  top: 11%;
+  top: 5%;
   left: 12%;
   right: 12%;
   bottom: 28%;
@@ -27,23 +27,12 @@ body {
   overflow-wrap: break-word;
   word-break: break-all
 }
-
-	canvas { display: block;
-  }
-
-  .inner {
-          padding: 20px;
-          position: relative;
-          height: 100vh;
-          width: calc(100vh / 867 * 920);
-          margin: auto;
-   }
-       .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-size: contain;
-            z-index: 2;
+ .overlay {
+   display: block;
+    margin-left: 80px;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+    background-size: contain;
+   z-index: 2;
         }
