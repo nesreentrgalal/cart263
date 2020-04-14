@@ -18,16 +18,28 @@ $(document).ready(function() {
   $(document).one("click", mousePressed);
 });
 
-
 // gotData (data)
 //
 // This function gets called by getJSON when the data has been loaded.
 // The data itself will be in the 'data' argument as a JavaScript object.
 function gotData(data) {
-  let philosophicalquestions = getRandomElement(data.philosophicalquestions);
-   $('body').append(philosophicalquestions)
-}
+  // Now we select random elements from the three arrays inside
+  // our JSON to get a random condiment, cat, and room. Then we add those
+  // words onto our page by setting the text of the appropriate span.
 
+  // philosophical questions to get from data.json
+  let philosophicalQuestion = getRandomElement(data.philosophicalQuestions);
+  // add it to the page
+  $('body').append(philosophicalQuestion)
+  // reponsive voice command 
+    responsiveVoice.speak(
+    philosophicalQuestion,
+    //a voiceover bot for the questions interviewing the human
+    "UK English Male",
+    { pitch: 0.5 },
+    { rate: 0.5 }
+  );
+}
 
 // dataError()
 //
