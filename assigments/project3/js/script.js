@@ -57,6 +57,6 @@ function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 // Function mousePressed to reload the page when the mouse is clicked.
-function mousePressed() {
-  location.reload(true);
-}
+//function mousePressed() {
+//  location.reload(true);
+//}
