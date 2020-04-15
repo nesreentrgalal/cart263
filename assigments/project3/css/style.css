@@ -24,8 +24,7 @@ body {
   right: 12%;
   bottom: 28%;
   z-index: 1;
-  overflow-wrap: break-word;
-  word-break: break-all
+  
 }
  .overlay {
    display: block;
@@ -35,4 +34,10 @@ body {
     height: 50%;
     background-size: contain;
    z-index: 2;
-        }  
+        }
+  #question{
+    position: absolute;
+    top: 500px;
+    left: 500px;
+    width:250px;
+  }

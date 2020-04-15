@@ -30,8 +30,8 @@ function gotData(data) {
   // philosophical questions to get from data.json
   let philosophicalQuestion = getRandomElement(data.philosophicalQuestions);
   // add it to the page
-  $('body').append(philosophicalQuestion)
-  // reponsive voice command 
+  $('#question').text(philosophicalQuestion)
+  // reponsive voice command
     responsiveVoice.speak(
     philosophicalQuestion,
     //a voiceover bot for the questions interviewing the human
