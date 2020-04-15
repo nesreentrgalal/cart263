@@ -39,3 +39,9 @@ body {
     left: 500px;
     width:250px;
   }
+
+  .w3-button {
+    background-color: #FF0092;
+    color: white;
+    font-family: 'Audiowide', cursive;
+  }
