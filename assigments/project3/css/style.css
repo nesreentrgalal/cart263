@@ -27,14 +27,9 @@ body {
 
 }
  .overlay {
-   display: block;
-    margin-left: 80px;
-    margin-right: auto;
-    width: 50%;
-    height: 50%;
-    background-size: contain;
-   z-index: 2;
-   width: 300px;
+   z-index: 1;
+   max-width: 200px;
+   height: 100px;
    height: auto;
 
         }
