@@ -13,7 +13,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'VT323', monospace;
-  font-size: 2em;
+  font-size: 2.8em;
   font-weight: bold;
   background-color: #000;;
   color: #50a756;
@@ -24,7 +24,7 @@ body {
   right: 12%;
   bottom: 28%;
   z-index: 1;
-  
+
 }
  .overlay {
    display: block;
@@ -34,10 +34,13 @@ body {
     height: 50%;
     background-size: contain;
    z-index: 2;
+   width: 300px;
+   height: auto;
+
         }
   #question{
     position: absolute;
-    top: 500px;
+    top: 200px;
     left: 500px;
     width:250px;
   }

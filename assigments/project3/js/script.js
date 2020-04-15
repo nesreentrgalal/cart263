@@ -1,7 +1,8 @@
 /********************************************************************
 Nesreen Galal
-Assignment 4: Condiments Cacophony
-Original code by Pippin Barr
+Project 3:
+Code help thanks to Project 4,
+Pippin's project Condiments Cacophony
 *********************************************************************/
 
 $(document).ready(function() {
