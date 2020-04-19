@@ -14,13 +14,23 @@
       <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
-  <script  src="js/retro.js"></script>
 
 <body>
+    <!-- to activate the playMus function -->
+<button onclick="playMus()" id="button" type="button"> ► </button>
+<h13> Play music by clicking on the ► </h13>
+      <!-- added this audio in this way since my start page doesnt have its seperate javascript file -->
+        <!--Joi by Hanz Zimmer from the Blade Runner 2049 movie -->
+<audio id="blade" src="assets/Joi.mp3" ></audio>
 
-      <!-- added this audio in this way since my start page doesnt have javascript code neither in the html or in the script -->
-<audio id="blade" src="assets/Joi.mp3" controls loop autoplay ></audio>
-
+<script>
+//taking the audio Id and giving it a variable
+var music = document.getElementById("blade");
+//to play music
+function playMus() {
+music.play();
+}
+</script>
 
   <div class="grid"></div>
   <p class="eightys-text">welcome to the simulation... </p>
