@@ -107,3 +107,10 @@ body {
   color: white;
   font-family: 'Audiowide', cursive;
 }
+
+#blade {
+  position: absolute;
+   width: 100px;
+   height: 300px;
+
+}
