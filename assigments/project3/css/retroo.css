@@ -63,7 +63,7 @@ body {
             transform: perspective(300px) rotateX(80deg) translateY(5.8%);
   }
 }
-/* sun animation using keyframes */
+/* sun animation using keyframes with the help of https://www.codeseek.co/JadeFrh/trippy-twilight-ojEpRQ */
 
 #circle {
   position: relative;
