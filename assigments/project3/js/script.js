@@ -57,6 +57,17 @@ function dataError(request, text, error) {
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
+//typewriter affect  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_typewriter
+var i = 0;
+var speed = 50;
+
+function typeWriter() {
+  if (i < philosophicalQuestion.length) {
+    document.getElementById("question").innerHTML += philosophicalQuestion.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
 // Function mousePressed to reload the page when the mouse is clicked.
 //function mousePressed() {
 //  location.reload(true);
