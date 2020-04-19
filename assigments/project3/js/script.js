@@ -1,6 +1,7 @@
 /********************************************************************
 Nesreen Galal
-Project 3:
+Project 3: Philopsical Simulation
+
 Code help thanks to Project 4,
 Pippin's project Condiments Cacophony
 *********************************************************************/
@@ -32,7 +33,7 @@ function gotData(data) {
   let philosophicalQuestion = getRandomElement(data.philosophicalQuestions);
   // add it to the page
   $('#question').text(philosophicalQuestion)
-  // reponsive voice command
+  // reponsive voice command to say the philospical questions
     responsiveVoice.speak(
     philosophicalQuestion,
     //a voiceover bot for the questions interviewing the human
@@ -52,7 +53,7 @@ function dataError(request, text, error) {
 
 // getRandomElement ()
 //
-// Returns a random element from the array provided
+// Returns a random question from the array provided
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
