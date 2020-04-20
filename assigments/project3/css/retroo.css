@@ -2,7 +2,7 @@ body {
   background-color: #313640;
   overflow: hidden;
 }
-
+/*  grid css https://codepen.io/SdRy/pen/gmGRzo  */
 .grid {
   top: -400px;
   bottom: -400px;
@@ -98,6 +98,9 @@ body {
   }
 }
 
+/* 4th dimension button */
+
+
 .w3-button {
   width:150px;
   position: absolute;
@@ -108,12 +111,15 @@ body {
   font-family: 'Audiowide', cursive;
 }
 
+/* audio */
+
 #blade {
   position: absolute;
    width: 100px;
    height: 50px;
 
 }
+/* play button */
 
 #button{
   cursor: pointer;

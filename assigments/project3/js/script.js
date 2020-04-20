@@ -2,37 +2,35 @@
 Nesreen Galal
 Project 3: Philopsical Simulation
 
+This Project is inspired by philosophical idealogies like extensionalism according to wiki its a philosophical theory or
+approach which emphasizes the existence of the individual person as a free and responsible agent determining their own development
+ through acts of the will, transhumanism which is the possibility of humans subconcious to be in transplanted in the computer
+and retro futurism, as well as Walter Benjamin's The Work of Art in the Age of Mechanical Reproduction, the idea of copies, like replicants
+in Blade Runner. Blade Runner's Voight-Kampff Test and Hal from 2001 Space Odyssey were inspirations for this project.
+Retro Futurism/Cyperpunk vibes adds to the retro futurism aesthetics that I was going for.Instead of the human asking
+questions, its the AI asking questions.
+
 Code help thanks to Project 4,
 Pippin's project Condiments Cacophony
 *********************************************************************/
 
 $(document).ready(function() {
 
-  // The first thing we need to do is load the data we're going
-  // to use to get random words.
-  //
-  // For that we use jQuery's .getJSON() function, which we give
-  // the location of the file, and a function to call when the data
-  // is available...
+  // load the data we're going to use to get the random questions by using jQuery's .getJSON() function
   $.getJSON('data/data.json')
     .done(gotData)
     .fail(dataError);
   $(document).one("click", mousePressed);
 });
 
-// gotData (data)
-//
-// This function gets called by getJSON when the data has been loaded.
-// The data itself will be in the 'data' argument as a JavaScript object.
-function gotData(data) {
-  // Now we select random elements from the three arrays inside
-  // our JSON to get a random condiment, cat, and room. Then we add those
-  // words onto our page by setting the text of the appropriate span.
 
+// function gets called by getJSON when the data is loaded.
+function gotData(data) {
+  // select random elements from the arrays  of questions inside
   // philosophical questions to get from data.json
   let philosophicalQuestion = getRandomElement(data.philosophicalQuestions);
   // add it to the page
-  $('#question').text(philosophicalQuestion)
+    $('#question').text(philosophicalQuestion)
   // reponsive voice command to say the philospical questions
     responsiveVoice.speak(
     philosophicalQuestion,
@@ -41,34 +39,18 @@ function gotData(data) {
     { pitch: 0.5 },
     { rate: 0.5 }
   );
+
 }
 
 // dataError()
-//
-// Called if the JSON does not load for some reason.
-// Reports the error to the console.
+// when JSON does not load for some reason.
 function dataError(request, text, error) {
+//  Reports the error to the console.
   console.error(error);
 }
 
 // getRandomElement ()
-//
 // Returns a random question from the array provided
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
-//typewriter affect  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_typewriter
-var i = 0;
-var speed = 50;
-
-function typeWriter() {
-  if (i < philosophicalQuestion.length) {
-    document.getElementById("question").innerHTML += philosophicalQuestion.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-// Function mousePressed to reload the page when the mouse is clicked.
-//function mousePressed() {
-//  location.reload(true);
-//}

@@ -1,64 +1,74 @@
 <!-- ************************************************************************
 
-Condiments
-Pippin Barr
 
-A webpage that randomly generates descriptions of condiments.
+This Project is inspired by philosophical idealogies like extensionalism according to wiki its a philosophical theory or
+approach which emphasizes the existence of the individual person as a free and responsible agent determining their own development
+ through acts of the will, transhumanism which is the possibility of humans subconcious to be in transplanted in the computer
+and retro futurism, as well as Walter Benjamin's The Work of Art in the Age of Mechanical Reproduction, the idea of copies, like replicants
+in Blade Runner. Blade Runner's Voight-Kampff Test and Hal from 2001 Space Odyssey were inspirations for this project.
+Retro Futurism/Cyperpunk vibes adds to the retro futurism aesthetics that I was going for. Instead of the human asking
+questions, its the AI asking questions.
+
+Project 3: Nesreen Galal
 
 ************************************************************************ -->
 
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-<head>
+    <title>philosophical simulation</title>
 
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Including font -->
 
-  <title>philosophical simulation </title>
+    <link
+      href="https://fonts.googleapis.com/css?family=VT323&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Including font -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-<link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <!-- Including jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- Including rita -->
+    <script src="js/libraries/rita.min.js" content="text/javascript"></script>
+    <!-- Including responsive voice  -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 
-
-  <!-- Including jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-  <!-- Including rita -->
-  <script src="js/libraries/rita.min.js" content="text/javascript"></script>
-  <!-- Including responsive voice  -->
-  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
-
-   <!-- We include our own script file(s) -->
-  <script src="js/script.js" content="text/javascript"></script>
-
-</head>
-<style>
-     body {
-       background-image: url("assets/background1.gif");
-        background-repeat: no-repeat;
-         background-size: cover;
-     }
-   </style>
-<body>
-  <div class="c64-monitor-container">
-    <div class="inner">
-        <div class="overlay">  <img  src="assets/c64-monitor.gif"  alt="old monitor"> </div>
+    <!-- my own script file(s) -->
+    <script src="js/script.js" content="text/javascript"></script>
+  </head>
+  <!--background image from https://giphy.com/gifs/images-vhs-watL8bcdCVpcY-->
+  <style>
+    body {
+      background-image: url("assets/background1.gif");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+  <body>
+    <div class="c64-monitor-container">
+      <div class="inner">
+        <div class="overlay">
+          <img src="assets/c64-monitor.gif" alt="old monitor" />
+        </div>
         <div id="js-screen" class="screen"></div>
+      </div>
     </div>
-</div>
-<div id="question"> philosophical</div>
-<form id="text" action="">
-<textarea  name="myTextBox" id="textt" cols="50" rows="5">
+    <!--form to submit to answer the robot-->
+    <div id="question">philosophical</div>
+    <form id="text" action="">
+      <textarea name="myTextBox" id="textt" cols="50" rows="5">
 answer me...
 </textarea>
-<br />
-<button id="buttin" class="w3-button"  onclick="location.reload();">submit</button>
-</form>
-
-</body>
-
+      <br />
+      <!-- button with help https://www.w3schools.com/w3css/w3css_buttons.asp -->
+      <button id="buttin" class="w3-button" onclick="location.reload();">
+        submit
+      </button>
+    </form>
+  </body>
 </html>
