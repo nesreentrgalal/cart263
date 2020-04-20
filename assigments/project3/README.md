@@ -4,4 +4,13 @@ approach which emphasizes the existence of the individual person as a free and r
 and retro futurism, as well as Walter Benjamin's The Work of Art in the Age of Mechanical Reproduction, the idea of copies, like replicants
 in Blade Runner. Blade Runner's Voight-Kampff Test and Hal from 2001 Space Odyssey were inspirations for this project.
 Retro Futurism/Cyperpunk vibes adds to the retro futurism aesthetics that I was going for. Instead of the human asking
-questions, its the AI asking questions.
+questions, its the AI asking questions. I used two libraries Responsive Voice and data.json, data and responsive work
+together to create an AI that has a voice, who communicates to the human viewer, and human viewer answers him by writing
+in the submission form. I used css to create an atomosphere with the help of codepen and codeseeker to create a retro
+futurism vibe, adding blade runner's soundtrack as well as adding a glitchy gif.
+This project went through so much change, at first I was planning to add annyang and eliza to make it more complex and more
+interactive, but due to this situation we are in and a lack of time, I had to adapt. I also wanted to try to add particles.js or using ogl Flowmap Deformation but thought it would be too much, so I added the glitchy gif instead and contrasts well with the start page, As for the typewriter effect, (felt bad asking you again for it) I am still very proud that I was able to give
+in a final project and I love the aesthetics and retro futurism which reminds me a lot of blade runner.
+I also combined two things that I love, philosophy was my second major choice, but what I love about art and coding is that
+you can mix art and philosophy together, my style is surrealistic, surrealism was inspired by Sigmund Freud's theoru of the unconscious and subconcious and using dreams. So I am proud of this project that I combined my inspirations from my favourite
+films, philosophy and interactive art. 
