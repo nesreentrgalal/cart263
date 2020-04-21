@@ -10,16 +10,17 @@ body {
   right: -400px;
   position: absolute;
   background-color: #313640;
-  background-image: linear-gradient(#FF0092 1px, transparent 2px), linear-gradient(90deg, #FF0092 1px, transparent 2px);
+  background-image: linear-gradient(#ff0092 1px, transparent 2px),
+    linear-gradient(90deg, #ff0092 1px, transparent 2px);
   background-size: 3% 3%, 3% 3%;
   background-position: 0 0, 0 0;
   -webkit-transform: perspective(300px) rotateX(80deg);
-          transform: perspective(300px) rotateX(80deg);
+  transform: perspective(300px) rotateX(80deg);
 }
 
 .eightys-text {
-  color: #FF0092;
-  font-family: 'Audiowide', cursive;
+  color: #ff0092;
+  font-family: "Audiowide", cursive;
   font-size: 80px;
   position: absolute;
   top: 0;
@@ -31,36 +32,36 @@ body {
   margin: auto;
   text-shadow: 0 0 12px rgba(186, 1, 255, 0.8);
   -webkit-text-stroke: 1px #f008b7;
- -webkit-filter: drop-shadow(2px 2px 20px #f008b7);
- z-index: 20;
+  -webkit-filter: drop-shadow(2px 2px 20px #f008b7);
+  z-index: 20;
 }
 
 .grid {
   -webkit-animation: throughSpace 2s linear;
-          animation: throughSpace 2s linear;
+  animation: throughSpace 2s linear;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes throughSpace {
   0% {
     -webkit-transform: perspective(300px) rotateX(80deg) translateY(0%);
-            transform: perspective(300px) rotateX(80deg) translateY(0%);
+    transform: perspective(300px) rotateX(80deg) translateY(0%);
   }
   100% {
     -webkit-transform: perspective(300px) rotateX(80deg) translateY(5.8%);
-            transform: perspective(300px) rotateX(80deg) translateY(5.8%);
+    transform: perspective(300px) rotateX(80deg) translateY(5.8%);
   }
 }
 
 @keyframes throughSpace {
   0% {
     -webkit-transform: perspective(300px) rotateX(80deg) translateY(0%);
-            transform: perspective(300px) rotateX(80deg) translateY(0%);
+    transform: perspective(300px) rotateX(80deg) translateY(0%);
   }
   100% {
     -webkit-transform: perspective(300px) rotateX(80deg) translateY(5.8%);
-            transform: perspective(300px) rotateX(80deg) translateY(5.8%);
+    transform: perspective(300px) rotateX(80deg) translateY(5.8%);
   }
 }
 /* sun animation using keyframes with the help of https://www.codeseek.co/JadeFrh/trippy-twilight-ojEpRQ */
@@ -85,55 +86,138 @@ body {
   width: 500px;
   height: 10px;
   background: linear-gradient(pink, yellow);
-  box-shadow: 3px 5px 10px #46579D;
+  box-shadow: 3px 5px 10px #46579d;
   animation: sunset 5s 0s infinite linear;
 }
 
 @keyframes sunset {
   0% {
-    top: 10px
+    top: 10px;
   }
   100% {
-    top: 190px
+    top: 190px;
   }
 }
 
 /* 4th dimension button */
 
-
 .w3-button {
-  width:150px;
+  width: 150px;
   position: absolute;
   bottom: 100px;
   right: 640px;
-  background-color: #FF0092;
+  background-color: #ff0092;
   color: white;
-  font-family: 'Audiowide', cursive;
+  font-family: "Audiowide", cursive;
 }
 
 /* audio */
 
 #blade {
   position: absolute;
-   width: 100px;
-   height: 50px;
-
+  width: 100px;
+  height: 50px;
 }
 /* play button */
 
-#button{
+#button {
   cursor: pointer;
-  font-family: 'Audiowide', cursive;
+  font-family: "Audiowide", cursive;
   font-weight: bold;
-  font-size:14px;
-  background-color: #FF0092;
-  color:#46579D;
+  font-size: 14px;
+  background-color: #ff0092;
+  color: #46579d;
   padding: 13px 6px;
   bottom: 200px;
   right: 640px;
   positon: relative;
 }
 
-h13{
- color: yellow;
+h13 {
+  color: yellow;
+}
+
+/* instruction button with the help of https://codepen.io/imprakash/pen/GgNMXO */
+
+.placement {
+  text-align: center;
+  position: absolute;
+  bottom: 200px;
+  right: 655px;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  background-color: #ff0092;
+  color: #ffff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  font-family: "Audiowide", cursive;
+}
+.button:hover {
+  background: #ffff00;
+  font-family: "Audiowide", cursive;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 420px;
+  margin-bottom: 500px;
+  margin-top: 500px;
+  margin-right: 35px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 40%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: "Audiowide", cursive;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #ff0092;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .box {
+    width: 70%;
+  }
+  .popup {
+    width: 70%;
+  }
 }
